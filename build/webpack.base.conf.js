@@ -1,0 +1,4 @@
+module.exports = {
+  module: {},
+  plugins: []
+};

@@ -1,0 +1,27 @@
+/* 左侧menu常量 */
+$--color-menuText: #bfcbd9;
+$--color-menuActiveText: #409eff;
+$--color-subMenuActiveText: #f4f4f5;
+$--color-menuBg: #304156;
+$--color-menuHoverBg: #263445;
+$--color-subMenuBg: #1f2d3d;
+$--color-subMenuHoverBg: #001528;
+$--size-menuNormalWidth: 210px;
+$--size-menuCollapseWidth: 54px;
+
+/* nav */
+$--size-navHeight: 50px;
+/* tag */
+$--size-tagHeight: 34px;
+
+:export {
+  colorMenuText: $--color-menuText;
+  colorMenuActiveText: $--color-menuActiveText;
+  colorSubMenuActiveText: $--color-subMenuActiveText;
+  colorMenuBg: $--color-menuBg;
+  colorMenuHoverBg: $--color-menuHoverBg;
+  colorSubMenuBg: $--color-subMenuBg;
+  colorSubMenuHoverBg: $--color-subMenuHoverBg;
+  sizeMenuNormalWidth: $--size-menuNormalWidth;
+  sizeMenuCollapseWidth: $--size-menuCollapseWidth;
+}
