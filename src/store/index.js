@@ -4,6 +4,7 @@ import app from './modules/app';
 import menu from './modules/menu';
 import tagsView from './modules/tagsView';
 import user from './modules/user';
+import Projet from './modules/projet';
 
 Vue.use(Vuex);
 
@@ -12,7 +13,8 @@ const store = new Vuex.Store({
     app,
     menu,
     tagsView,
-    user
+    user,
+    Projet
   }
 });
 

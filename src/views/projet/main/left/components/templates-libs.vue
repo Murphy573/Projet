@@ -1,18 +1,17 @@
 <template>
-  <div class="projet-main">
-    <MainLeft />
+  <div class="template-libs">
+    <h3 class="title">模版</h3>
   </div>
 </template>
 
 <script>
-import MainLeft from './left';
 
 export default {
-  name: 'ProjetMain',
+  name: 'TemplatesLibs',
 
   mixins: [],
 
-  components: { MainLeft },
+  components: {},
 
   props: {},
 
@@ -33,8 +32,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.projet-main {
-  display: flex;
-  height: 700px;
+.template-libs {
+  height: 100%;
+  .title {
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 14px;
+  }
 }
 </style>

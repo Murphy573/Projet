@@ -9,6 +9,8 @@ $--color-subMenuHoverBg: #001528;
 $--size-menuNormalWidth: 210px;
 $--size-menuCollapseWidth: 54px;
 
+$--color-primary: #409eff;
+
 /* nav */
 $--size-navHeight: 50px;
 /* tag */
@@ -24,4 +26,5 @@ $--size-tagHeight: 34px;
   colorSubMenuHoverBg: $--color-subMenuHoverBg;
   sizeMenuNormalWidth: $--size-menuNormalWidth;
   sizeMenuCollapseWidth: $--size-menuCollapseWidth;
+  colorPrimary: $--color-primary;
 }

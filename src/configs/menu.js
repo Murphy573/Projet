@@ -25,6 +25,223 @@ export default [
     }
   },
   {
+    name: 'projet',
+    meta: {
+      icon: 'dashboard',
+      title: 'projet'
+    }
+  },
+  {
+    name: 'projet',
+    meta: {
+      icon: 'dashboard',
+      title: 'projet'
+    }
+  },
+  {
+    name: 'projet',
+    meta: {
+      icon: 'dashboard',
+      title: 'projet'
+    }
+  },
+  {
+    name: 'projet',
+    meta: {
+      icon: 'dashboard',
+      title: 'projet'
+    }
+  },
+  {
+    name: 'projet',
+    meta: {
+      icon: 'dashboard',
+      title: 'projet'
+    }
+  },
+  {
+    name: 'projet',
+    meta: {
+      icon: 'dashboard',
+      title: 'projet'
+    }
+  },
+  {
+    name: 'projet',
+    meta: {
+      icon: 'dashboard',
+      title: 'projet'
+    }
+  },
+  {
+    name: 'projet',
+    meta: {
+      icon: 'dashboard',
+      title: 'projet'
+    }
+  },
+  {
+    name: 'projet',
+    meta: {
+      icon: 'dashboard',
+      title: 'projet'
+    }
+  },
+  {
+    name: 'projet',
+    meta: {
+      icon: 'dashboard',
+      title: 'projet'
+    }
+  },
+  {
+    name: 'projet',
+    meta: {
+      icon: 'dashboard',
+      title: 'projet'
+    }
+  },
+  {
+    name: 'projet',
+    meta: {
+      icon: 'dashboard',
+      title: 'projet'
+    }
+  },
+  {
+    name: 'projet',
+    meta: {
+      icon: 'dashboard',
+      title: 'projet'
+    }
+  },
+  {
+    name: 'projet',
+    meta: {
+      icon: 'dashboard',
+      title: 'projet'
+    }
+  },
+  {
+    name: 'projet',
+    meta: {
+      icon: 'dashboard',
+      title: 'projet'
+    }
+  },
+  {
+    name: 'projet',
+    meta: {
+      icon: 'dashboard',
+      title: 'projet'
+    }
+  },
+  {
+    name: 'projet',
+    meta: {
+      icon: 'dashboard',
+      title: 'projet'
+    }
+  },
+  {
+    name: 'projet',
+    meta: {
+      icon: 'dashboard',
+      title: 'projet'
+    }
+  },
+  {
+    name: 'projet',
+    meta: {
+      icon: 'dashboard',
+      title: 'projet'
+    }
+  },
+  {
+    name: 'projet',
+    meta: {
+      icon: 'dashboard',
+      title: 'projet'
+    }
+  },
+  {
+    name: 'projet',
+    meta: {
+      icon: 'dashboard',
+      title: 'projet'
+    }
+  },
+  {
+    name: 'projet',
+    meta: {
+      icon: 'dashboard',
+      title: 'projet'
+    }
+  },
+  {
+    name: 'projet',
+    meta: {
+      icon: 'dashboard',
+      title: 'projet'
+    }
+  },
+  {
+    name: 'projet',
+    meta: {
+      icon: 'dashboard',
+      title: 'projet'
+    }
+  },
+  {
+    name: 'projet',
+    meta: {
+      icon: 'dashboard',
+      title: 'projet'
+    }
+  },
+  {
+    name: 'projet',
+    meta: {
+      icon: 'dashboard',
+      title: 'projet'
+    }
+  },
+  {
+    name: 'projet',
+    meta: {
+      icon: 'dashboard',
+      title: 'projet'
+    }
+  },
+  {
+    name: 'projet',
+    meta: {
+      icon: 'dashboard',
+      title: 'projet'
+    }
+  },
+  {
+    name: 'projet',
+    meta: {
+      icon: 'dashboard',
+      title: 'projet'
+    }
+  },
+  {
+    name: 'projet',
+    meta: {
+      icon: 'dashboard',
+      title: 'projet'
+    }
+  },
+  {
+    name: 'projet',
+    meta: {
+      icon: 'dashboard',
+      title: 'projet'
+    }
+  },
+  {
     name: 'eg',
     meta: {
       icon: 'chart',

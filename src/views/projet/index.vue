@@ -1,11 +1,16 @@
 <template>
   <div class="projet">
     <ProjetHeader />
+    <ProjetMain />
   </div>
 </template>
 
 <script>
 import ProjetHeader from './header/index';
+import ProjetMain from './main/index';
+import { createNamespacedHelpers } from 'vuex';
+
+const { mapActions, mapGetters } = createNamespacedHelpers('Projet');
 
 export default {
   name: 'Projet',
@@ -13,7 +18,8 @@ export default {
   mixins: [],
 
   components: {
-    ProjetHeader
+    ProjetHeader,
+    ProjetMain
   },
 
   props: {},
@@ -24,13 +30,22 @@ export default {
     };
   },
 
-  computed: {},
+  computed: {
+    ...mapGetters(['vx_gt_pageData'])
+  },
 
   watch: {},
 
-  created () { },
+  created () {
+    this.pageInit();
+  },
 
-  methods: {}
+  methods: {
+    ...mapActions(['vx_ac_AddPage']),
+    pageInit () {
+      this.vx_ac_AddPage();
+    }
+  }
 };
 </script>
 
