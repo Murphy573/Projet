@@ -8,7 +8,7 @@ export default {
     eg33: '示例33',
     eg4: '示例4',
     detail: '示例4详情',
-    customize: '自定义'
+    projet: '自定义'
   },
   tagsView: {
     refresh: '刷新',

@@ -3,6 +3,7 @@ import Element from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 // 全局css
 import '@/styles/index.scss';
+import '@/assets/iconfonts/iconfont.css';
 
 import Vue from 'vue';
 import App from './App';

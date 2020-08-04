@@ -18,10 +18,10 @@ export default [
     }
   },
   {
-    name: 'customize',
+    name: 'projet',
     meta: {
       icon: 'dashboard',
-      title: 'customize'
+      title: 'projet'
     }
   },
   {

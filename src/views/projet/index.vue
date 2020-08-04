@@ -1,17 +1,20 @@
 <template>
-  <div>
-
+  <div class="projet">
+    <ProjetHeader />
   </div>
 </template>
 
 <script>
+import ProjetHeader from './header/index';
 
 export default {
-  name: 'Customize',
+  name: 'Projet',
 
   mixins: [],
 
-  components: {},
+  components: {
+    ProjetHeader
+  },
 
   props: {},
 

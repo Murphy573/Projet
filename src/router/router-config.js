@@ -1,7 +1,7 @@
 import Dashboard from './modules/dashboard';
 import eg from './modules/eg';
 import Base from './modules/base';
-import customize from './modules/customize';
+import projet from './modules/projet';
 
 /**
 * meta : {
@@ -33,7 +33,7 @@ export default [
       },
       Dashboard,
       eg,
-      customize
+      projet
     ]
   },
   {
