@@ -114,9 +114,9 @@ export default {
 
         &.active {
           color: #409eff;
-          background: rgba($color: #409eff, $alpha: 0.1);
+          background: rgba($color: $--color-primary, $alpha: 0.1);
           &:hover {
-            background: none;
+            background: rgba($color: $--color-primary, $alpha: 0.1);
           }
         }
 
