@@ -2,6 +2,7 @@
   <div class="projet">
     <ProjetHeader />
     <ProjetMain />
+    {{vx_gt_pageData}}
   </div>
 </template>
 

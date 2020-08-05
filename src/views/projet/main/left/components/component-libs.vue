@@ -13,7 +13,8 @@
           <ul class="section-content">
             <li v-for="(element,i) in item.list"
               :key="i"
-              class="lib-item">
+              class="lib-item"
+              @click="handleClick(element)">
               <p class="lib-item-icon">
                 <i class="icon iconfont"
                   :class="element.icon"></i>
@@ -34,6 +35,10 @@
 <script>
 import Components from '../../../model/components';
 import MyElScrollbar from '@/components/my-el-scrollbar';
+import { RegisterComponentObject } from '../../../resource/index';
+import { createNamespacedHelpers } from 'vuex';
+
+const { mapActions } = createNamespacedHelpers('Projet');
 
 export default {
   name: 'ComponentLibs',
@@ -56,7 +61,37 @@ export default {
 
   created () { },
 
-  methods: {}
+  methods: {
+    ...mapActions(['vx_ac_AddElement']),
+    handleClick (element) {
+      let props = this.getComponentProps(element.componentName);
+
+      this.vx_ac_AddElement({ componentName: element.componentName, props });
+    },
+    /**
+     * 根据componentName获取组件默认props数据
+     * @param componentName
+     */
+    getComponentProps (componentName) {
+      let elComponentData;
+      for (let key in RegisterComponentObject) {
+        if (key.toLowerCase() === componentName.toLowerCase()) {
+          elComponentData = RegisterComponentObject[key];
+          break;
+        }
+      }
+      if (!elComponentData) return {};
+
+      let props = {};
+      for (let key in elComponentData.props) {
+        props[key] =
+          [Object, Array].includes(elComponentData.props[key].type)
+            ? elComponentData.props[key].default()
+            : elComponentData.props[key].default;
+      }
+      return props;
+    }
+  }
 };
 </script>
 
