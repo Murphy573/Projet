@@ -19,6 +19,9 @@ export default {
         type: PROJET_ATTR_STRING
       }
     }
+  },
+  defaultCss: {
+    height: 50
   }
 };
 </script>

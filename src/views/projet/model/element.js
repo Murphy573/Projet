@@ -8,6 +8,7 @@ import { copyCommonCss } from './css';
 export function InitNewElement (elementData) {
   let _elementData = deepClone(elementData);
   _elementData.uid = generateUniqueIdByCustom(12);
-  _elementData.css = copyCommonCss();
+  _elementData.css = Object.assign({}, copyCommonCss(), _elementData.defaultCss);
+  delete _elementData.defaultCss;
   return _elementData;
 }

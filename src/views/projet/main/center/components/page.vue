@@ -4,9 +4,10 @@
     <edit-shape v-for="item in vx_gt_pageData.elements"
       :key="item.uuid"
       :uuid="item.uuid"
-      @element-click="handleElementClick(item.uid)"
-      :active="item.uid === vx_gt_activeElementUid">
+      :active="item.uid === vx_gt_activeElementUid"
+      @element-click="handleElementClick(item.uid)">
       <component :is="item.componentName"
+        :style="formatCommonCss(item.css)"
         v-bind="item.props" />
     </edit-shape>
 
@@ -16,6 +17,7 @@
 
 <script>
 import EditShape from './edit-shape';
+import { formatCommonCss } from '@/views/projet/model/css.js';
 import { createNamespacedHelpers } from 'vuex';
 
 const { mapGetters, mapActions } = createNamespacedHelpers('Projet');
@@ -31,7 +33,7 @@ export default {
 
   data () {
     return {
-
+      formatCommonCss: formatCommonCss
     };
   },
 

@@ -1,5 +1,4 @@
 <template>
-
   <div class="component-libs">
     <h3 class="title">组件库</h3>
     <div class="content">
@@ -27,9 +26,7 @@
         </section>
       </MyElScrollbar>
     </div>
-
   </div>
-
 </template>
 
 <script>
@@ -43,11 +40,7 @@ const { mapActions } = createNamespacedHelpers('Projet');
 export default {
   name: 'ComponentLibs',
 
-  mixins: [],
-
   components: { MyElScrollbar },
-
-  props: {},
 
   data () {
     return {
@@ -55,18 +48,12 @@ export default {
     };
   },
 
-  computed: {},
-
-  watch: {},
-
-  created () { },
-
   methods: {
     ...mapActions(['vx_ac_AddElement']),
     handleClick (element) {
-      let props = this.getComponentProps(element.componentName);
+      let { props, defaultCss } = this.getComponentProps(element.componentName);
 
-      this.vx_ac_AddElement({ componentName: element.componentName, props });
+      this.vx_ac_AddElement({ componentName: element.componentName, props, defaultCss });
     },
     /**
      * 根据componentName获取组件默认props数据
@@ -82,6 +69,7 @@ export default {
       }
       if (!elComponentData) return {};
 
+      let defaultCss = elComponentData.defaultCss || {};
       let props = {};
       for (let key in elComponentData.props) {
         props[key] =
@@ -89,7 +77,8 @@ export default {
             ? elComponentData.props[key].default()
             : elComponentData.props[key].default;
       }
-      return props;
+
+      return { props, defaultCss };
     }
   }
 };
