@@ -2,7 +2,7 @@
   <div class="props-editor">
     <MyElScrollbar>
       <el-form label-position="left"
-        label-width="80px"
+        label-width="100px"
         size="small">
         <el-form-item label="唯一ID">
           <el-tag type="danger">{{vx_gt_activeElementData.uid}}</el-tag>
@@ -11,6 +11,7 @@
           :key="item.key"
           :label="item.label">
           <component :is="item.renderType"
+            :options="item.options"
             v-model="cmpt_activeElementProps[item.propKey]"></component>
         </el-form-item>
       </el-form>
@@ -25,32 +26,34 @@ import AttrInput from './components/AttrInput';
 import AttrNumber from './components/AttrNumber';
 import AttrImageUpload from './components/AttrImageUpload';
 import AttrColorpicker from './components/AttrColorpicker';
+import AttrLink from './components/AttrLink';
+import AttrSelect from './components/AttrSelect';
+import AttrSwitch from './components/AttrSwitch';
+import AttrRadio from './components/AttrRadio';
+import AttrCheckbox from './components/AttrCheckbox';
+import AttrDatetime from './components/AttrDatetime';
 /* 属性组件 end */
 
 import { getComponentPropsEditors } from '@/views/projet/utils/element';
 import { createNamespacedHelpers } from 'vuex';
 
-const { mapGetters, mapActions } = createNamespacedHelpers('Projet');
+const { mapGetters } = createNamespacedHelpers('Projet');
 
 export default {
   name: 'PropsEditor',
-
-  mixins: [],
 
   components: {
     MyElScrollbar,
     AttrInput,
     AttrNumber,
     AttrImageUpload,
-    AttrColorpicker
-  },
-
-  props: {},
-
-  data () {
-    return {
-
-    };
+    AttrColorpicker,
+    AttrLink,
+    AttrSelect,
+    AttrSwitch,
+    AttrRadio,
+    AttrCheckbox,
+    AttrDatetime
   },
 
   computed: {
@@ -61,13 +64,7 @@ export default {
     cmpt_editorList () {
       return getComponentPropsEditors(this.vx_gt_activeElementData.componentName);
     }
-  },
-
-  watch: {},
-
-  created () { },
-
-  methods: {}
+  }
 };
 </script>
 

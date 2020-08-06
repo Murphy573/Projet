@@ -1,10 +1,12 @@
 import Vue from 'vue';
 import ProjetPage from './ProjetPage/index.vue';
-import ProjectText from './ProjetText/index.vue';
+import ProjetText from './ProjetText/index.vue';
+import ProjetSample from './ProjetSample/index.vue';
 
 const Components = [
   ProjetPage,
-  ProjectText
+  ProjetText,
+  ProjetSample
 ];
 
 Components.forEach(component => {

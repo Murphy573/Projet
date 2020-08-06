@@ -90,13 +90,12 @@ export function getComponentPropsEditors (componentName) {
     // editor不存在或者不为对象，跳过
     if (!editor || !isPlainObj(editor)) continue;
 
-    let { label, type, options, groups } = editor;
+    let { label, type, options } = editor;
     editorList.push({
       propKey: key,
-      label,
       renderType: type,
-      options: options || [],
-      groups: groups || []
+      label,
+      options
     });
   }
 

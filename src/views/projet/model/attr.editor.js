@@ -27,6 +27,7 @@ export const PROJET_ATTR_LINK = 'AttrLink';
 // 写法参考：editor: {type: PROJET_SELECT, options: [{label: '1', value: '1'}...]}
 export const PROJET_ATTR_SELECT = 'AttrSelect';
 // 开关switch
+// 写法参考：AttrSwitch组件的options属性注释
 export const PROJET_ATTR_SWITCH = 'AttrSwitch';
 // 单选框 radio
 // 写法参考：editor: {type: PROJET_ATTR_RADIO, options: [{label: '1', value: '1'}...]}
@@ -34,3 +35,5 @@ export const PROJET_ATTR_RADIO = 'AttrRadio';
 // 多选框 checkbox
 // 写法参考：editor: {type: PROJET_ATTR_CHECKBOX, options: [{label: '1', value: '1'}...]}
 export const PROJET_ATTR_CHECKBOX = 'AttrCheckbox';
+// 日期组件
+export const PROJET_ATTR_DATETIME = 'AttrDatetime';

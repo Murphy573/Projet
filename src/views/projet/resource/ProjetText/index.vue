@@ -1,17 +1,12 @@
 <template>
   <div class="projet-text"
     :style="cmpt_style">
-    {{title}}---{{num}}--{{color}}
+    {{title}}
   </div>
 </template>
 
 <script>
-import {
-  PROJET_ATTR_STRING,
-  PROJET_ATTR_NUMBER,
-  PROJET_ATTR_IMAGEUPLOAD,
-  PROJET_ATTR_COLORPICKER
-} from '../../model/attr.editor';
+import { PROJET_ATTR_STRING } from '../../model/attr.editor';
 import createComponent from '../../model/create-component';
 
 export default createComponent({
@@ -24,30 +19,6 @@ export default createComponent({
       editor: {
         label: '文本内容',
         type: PROJET_ATTR_STRING
-      }
-    },
-    num: {
-      type: Number,
-      default: 0,
-      editor: {
-        label: '数字',
-        type: PROJET_ATTR_NUMBER
-      }
-    },
-    img: {
-      type: String,
-      default: '',
-      editor: {
-        label: '背景图片',
-        type: PROJET_ATTR_IMAGEUPLOAD
-      }
-    },
-    color: {
-      type: String,
-      default: '',
-      editor: {
-        label: '文字颜色',
-        type: PROJET_ATTR_COLORPICKER
       }
     }
   },
