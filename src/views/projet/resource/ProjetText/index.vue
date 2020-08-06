@@ -21,6 +21,7 @@ export default {
     }
   },
   defaultCss: {
+    width: 200,
     height: 50
   }
 };

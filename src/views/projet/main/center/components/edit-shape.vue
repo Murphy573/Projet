@@ -25,6 +25,8 @@ export default {
 
 <style lang="scss" scoped>
 .edit-shape {
+  width: max-content;
+  height: max-content;
   position: relative;
   cursor: pointer;
 
