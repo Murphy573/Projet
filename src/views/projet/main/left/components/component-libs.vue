@@ -32,7 +32,6 @@
 <script>
 import Components from '../../../model/components';
 import MyElScrollbar from '@/components/my-el-scrollbar';
-import { RegisterComponentObject } from '../../../resource/index';
 import { createNamespacedHelpers } from 'vuex';
 
 const { mapActions } = createNamespacedHelpers('Projet');
@@ -51,34 +50,7 @@ export default {
   methods: {
     ...mapActions(['vx_ac_AddElement']),
     handleClick (element) {
-      let { props, defaultCss } = this.getComponentProps(element.componentName);
-
-      this.vx_ac_AddElement({ componentName: element.componentName, props, defaultCss });
-    },
-    /**
-     * 根据componentName获取组件默认props数据
-     * @param componentName
-     */
-    getComponentProps (componentName) {
-      let elComponentData;
-      for (let key in RegisterComponentObject) {
-        if (key.toLowerCase() === componentName.toLowerCase()) {
-          elComponentData = RegisterComponentObject[key];
-          break;
-        }
-      }
-      if (!elComponentData) return {};
-
-      let defaultCss = elComponentData.defaultCss || {};
-      let props = {};
-      for (let key in elComponentData.props) {
-        props[key] =
-          [Object, Array].includes(elComponentData.props[key].type)
-            ? elComponentData.props[key].default()
-            : elComponentData.props[key].default;
-      }
-
-      return { props, defaultCss };
+      this.vx_ac_AddElement(element.componentName);
     }
   }
 };

@@ -12,7 +12,6 @@ export default {
   name: 'EditShape',
 
   props: {
-    uid: String,
     active: Boolean
   },
 

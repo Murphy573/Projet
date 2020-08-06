@@ -1,8 +1,7 @@
 <template>
   <div class="main-center"
     @click="handlePageClick">
-    <div class="main-editor"
-      :style="{width: vx_gt_pageData.width + 'px', height: vx_gt_pageData.height + 'px'}">
+    <div class="main-editor">
       <PageCenter />
     </div>
   </div>
@@ -26,7 +25,6 @@ export default {
   methods: {
     ...mapActions(['vx_ac_SetActiveElementUid']),
     handlePageClick () {
-      debugger;
       this.vx_ac_SetActiveElementUid(this.vx_gt_pageData.uid);
     }
   }
@@ -40,6 +38,8 @@ export default {
   background: #eee;
 
   .main-editor {
+    width: 375px;
+    height: 644px;
     box-shadow: 0 3px 10px #dcdcdc;
     margin: 25px auto;
     position: relative;

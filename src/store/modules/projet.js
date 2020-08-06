@@ -3,7 +3,7 @@ import { InitNewPage } from '@/views/projet/model/page';
 import { InitNewElement } from '@/views/projet/model/element';
 import { findActiveElement } from '@/views/projet/utils/element';
 import { showMessage } from '@/views/projet/utils/common';
-import { isPlainObj, isArray } from '@/utils/common';
+import { isArray } from '@/utils/common';
 
 export default {
   namespaced: true,
@@ -37,7 +37,7 @@ export default {
       if (!element) return;
       let finded = findActiveElement(state.pageData, state.activeElementUid);
       if (!finded) return;
-      finded.elements.push(element);
+      finded.props.elements.push(element);
     },
     SET_ACTIVEELEMENTPUID (state, puid = '') {
       if (!puid) return;
@@ -57,21 +57,20 @@ export default {
     },
     /* 添加页面 */
     vx_ac_AddPage ({ commit }) {
-      debugger;
       let _page = InitNewPage();
       commit('ADD_PAGE', _page);
       commit('SET_ACTIVEELEMENTPUID', _page.uid);
       commit('SET_ACTIVEELEMENTUID', _page.puid);
     },
     /* 添加元素组件 */
-    vx_ac_AddElement ({ commit, getters }, elementData = null) {
-      if (!elementData) return;
+    vx_ac_AddElement ({ commit, getters }, componentName = null) {
+      if (!componentName) return;
       let { vx_gt_activeElementData, vx_gt_activeElementUid } = getters;
-      if (!isArray(vx_gt_activeElementData.elements)) {
+      if (!isArray(vx_gt_activeElementData.props.elements)) {
         showMessage('当前元素不支持插入子元素');
         return;
       }
-      let _elementData = InitNewElement(elementData);
+      let _elementData = InitNewElement(componentName);
       // 设置当前激活元素的id为其父ID
       _elementData.puid = vx_gt_activeElementUid;
 

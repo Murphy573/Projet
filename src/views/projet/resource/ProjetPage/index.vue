@@ -1,6 +1,7 @@
 <template>
-  <div class="projet-text">
+  <div class="project-page">
     {{title}}
+    <slot></slot>
   </div>
 </template>
 
@@ -8,26 +9,33 @@
 import { PROJET_ATTR_STRING } from '../../model/attr.editor';
 
 export default {
-  name: 'ProjetText',
+  name: 'ProjetPage',
 
   props: {
     title: {
       type: String,
-      default: '这是一段文本',
+      default: '根页面标题',
       editor: {
-        label: '文本内容',
+        label: '页面标题',
         type: PROJET_ATTR_STRING
       }
+    },
+    elements: {
+      type: Array,
+      default () {
+        return [];
+      },
+      editor: false
     }
   },
   defaultCss: {
-    height: 50
+    height: 'auto'
   }
 };
 </script>
 
 <style lang="scss" scoped>
-.projet-text {
+.project-page {
   position: relative;
 }
 </style>

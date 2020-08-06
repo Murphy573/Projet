@@ -1,18 +1,17 @@
 <template>
-  <div class="page-center"
-    :style="{width: vx_gt_pageData.width + 'px', height: vx_gt_pageData.height + 'px'}">
-    <edit-shape v-for="item in vx_gt_pageData.elements"
+  <component :is="vx_gt_pageData.componentName"
+    v-bind="vx_gt_pageData.props"
+    :style="formatCommonCss(vx_gt_pageData.css)">
+    <edit-shape v-for="item in vx_gt_pageData.props.elements"
       :key="item.uuid"
-      :uuid="item.uuid"
       :active="item.uid === vx_gt_activeElementUid"
       @element-click="handleElementClick(item.uid)">
       <component :is="item.componentName"
         :style="formatCommonCss(item.css)"
         v-bind="item.props" />
     </edit-shape>
-
     {{vx_gt_activeElementUid}}
-  </div>
+  </component>
 </template>
 
 <script>

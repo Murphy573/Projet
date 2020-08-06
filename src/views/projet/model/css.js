@@ -2,6 +2,8 @@
 
 import { deepClone } from '@/utils/object';
 
+const NUMBER_PATTERN = /^[+-]?\d+(\.\d+)?([Ee][+-]?[\d]+)?$/;
+
 const CommonCss = {
   width: 375,
   height: 40,
@@ -56,14 +58,16 @@ export function formatCommonCss (cssObj) {
 
   for (let key in cssObj) {
     if (needUnitStr.includes(key)) {
-      style[key] = cssObj[key] + 'px';
+      style[key] = cssObj[key] + (NUMBER_PATTERN.test(cssObj[key]) ? 'px' : '');
     }
     else {
       style[key] = cssObj[key];
     }
   }
+
   style.backgroundImage = style.backgroundImage
     ? `url(${style.backgroundImage})`
     : '';
+
   return style;
 };
