@@ -2,13 +2,16 @@
   <div class="main-center"
     @click="handlePageClick">
     <div class="main-editor">
-      <PageCenter />
+      <MyElScrollbar>
+        <PageCenter />
+      </MyElScrollbar>
     </div>
   </div>
 </template>
 
 <script>
 import PageCenter from './components/page';
+import MyElScrollbar from '@/components/my-el-scrollbar';
 import { createNamespacedHelpers } from 'vuex';
 
 const { mapGetters, mapActions } = createNamespacedHelpers('Projet');
@@ -16,7 +19,7 @@ const { mapGetters, mapActions } = createNamespacedHelpers('Projet');
 export default {
   name: 'MainCenter',
 
-  components: { PageCenter },
+  components: { PageCenter, MyElScrollbar },
 
   computed: {
     ...mapGetters(['vx_gt_pageData'])

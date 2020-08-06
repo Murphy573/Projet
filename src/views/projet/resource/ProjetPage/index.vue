@@ -7,8 +7,9 @@
 
 <script>
 import { PROJET_ATTR_STRING } from '../../model/attr.editor';
+import createComponent from '../../model/create-component';
 
-export default {
+export default createComponent({
   name: 'ProjetPage',
 
   props: {
@@ -19,19 +20,12 @@ export default {
         label: '页面标题',
         type: PROJET_ATTR_STRING
       }
-    },
-    elements: {
-      type: Array,
-      default () {
-        return [];
-      },
-      editor: false
     }
   },
   defaultCss: {
     height: 'auto'
   }
-};
+}, true);
 </script>
 
 <style lang="scss" scoped>

@@ -47,7 +47,7 @@ export default {
 
 <style lang="scss" scoped>
 .main-right {
-  width: 280px;
+  width: 360px;
   flex: none;
   height: 100%;
   box-shadow: -1px 2px 4px rgba(0, 21, 41, 0.08);

@@ -18,19 +18,19 @@ export const PROJET_ATTR_STRING = 'AttrInput';
 // 输入 number
 export const PROJET_ATTR_NUMBER = 'AttrNumber';
 // 图片上传
-export const PROJET_ATTR_IMAGE_UPLOAD = 'AttrImageUpload';
+export const PROJET_ATTR_IMAGEUPLOAD = 'AttrImageUpload';
 // 颜色选择
-export const PROJET_ATTR_COLORPICKER = 'AttrInput';
+export const PROJET_ATTR_COLORPICKER = 'AttrColorpicker';
 // 链接
-export const PROJET_ATTR_LINK = 'AttrInput';
+export const PROJET_ATTR_LINK = 'AttrLink';
 // 下拉选择，editor写法举例
 // 写法参考：editor: {type: PROJET_SELECT, options: [{label: '1', value: '1'}...]}
 export const PROJET_ATTR_SELECT = 'AttrSelect';
 // 开关switch
 export const PROJET_ATTR_SWITCH = 'AttrSwitch';
 // 单选框 radio
-// 写法参考：editor: {type: PROJET_ATTR_RADIO, groups: [{label: '1', value: '1'}...]}
+// 写法参考：editor: {type: PROJET_ATTR_RADIO, options: [{label: '1', value: '1'}...]}
 export const PROJET_ATTR_RADIO = 'AttrRadio';
 // 多选框 checkbox
-// 写法参考：editor: {type: PROJET_ATTR_CHECKBOX, groups: [{label: '1', value: '1'}...]}
+// 写法参考：editor: {type: PROJET_ATTR_CHECKBOX, options: [{label: '1', value: '1'}...]}
 export const PROJET_ATTR_CHECKBOX = 'AttrCheckbox';

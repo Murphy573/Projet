@@ -7,7 +7,7 @@
       :active="item.uid === vx_gt_activeElementUid"
       @element-click="handleElementClick(item.uid)">
       <component :is="item.componentName"
-        :style="formatCommonCss(item.css)"
+        :css="formatCommonCss(item.css)"
         v-bind="item.props" />
     </edit-shape>
     {{vx_gt_activeElementUid}}
@@ -52,9 +52,3 @@ export default {
   }
 };
 </script>
-
-<style lang="scss" scoped>
-.page-center {
-  overflow-y: auto;
-}
-</style>
