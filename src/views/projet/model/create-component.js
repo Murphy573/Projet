@@ -1,4 +1,5 @@
 
+import { PROJET_ATTR_LINK } from './attr.editor';
 /**
  * 创建组件：可以添加一些公共属性
  * @param {config} 组件配置
@@ -8,12 +9,25 @@ export default function (config, hasElements = false) {
   if (!config.props) {
     config.props = {};
   }
+  // 样式
   config.props.css = {
     type: Object,
     default () {
       return {};
     }
   };
+  // 跳转链接
+  if (config.name !== 'ProjetPage') {
+    config.props.jumpLink = {
+      type: String,
+      default: '',
+
+      editor: {
+        label: '点击跳转',
+        type: PROJET_ATTR_LINK
+      }
+    };
+  }
 
   if (hasElements) {
     config.props.elements = {

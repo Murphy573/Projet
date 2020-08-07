@@ -31,7 +31,7 @@ export default {
 
   data () {
     return {
-      activeName: 'prop'
+      activeName: 'css'
     };
   },
 

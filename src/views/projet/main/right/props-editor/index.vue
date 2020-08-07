@@ -72,5 +72,16 @@ export default {
 .props-editor {
   height: 100%;
   overflow: hidden;
+
+  ::v-deep {
+    .el-form {
+      .el-form-item {
+        margin-bottom: 10px;
+        .el-form-item__label {
+          font-weight: 400;
+        }
+      }
+    }
+  }
 }
 </style>

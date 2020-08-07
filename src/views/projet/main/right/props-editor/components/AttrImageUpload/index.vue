@@ -11,7 +11,7 @@
       <el-button slot="trigger"
         size="small"
         type="danger"
-        :loading="uploadLoading">选择图片</el-button>
+        :loading="uploadLoading">选择</el-button>
     </el-upload>
   </el-input>
 </template>
@@ -74,7 +74,7 @@ export default {
           let hexColor = Math.floor(Math.random() * 16777216).toString(16);
           let result = await new Promise((resolve, reject) => {
             setTimeout(() => {
-              resolve(`https://dummyimage.com/600x400/${hexColor}.png`);
+              resolve(`https://dummyimage.com/600x400/${hexColor}.jpg`);
             }, 1000);
           });
           this.myValue = result;

@@ -38,7 +38,6 @@ export default createComponent({
 
   defaultCss: {
     width: '200',
-    height: 'auto',
     wordBreak: 'break-all'
   }
 });

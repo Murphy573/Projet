@@ -92,3 +92,13 @@
 .el-table th.gutter {
   display: table-cell !important;
 }
+
+.el-form {
+  .el-form-item {
+    // margin-bottom: 30px !important;
+
+    &.el-form-item-bottom-0 {
+      margin-bottom: 0 !important;
+    }
+  }
+}
