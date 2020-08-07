@@ -46,5 +46,6 @@ export default createComponent({
 <style lang="scss" scoped>
 .projet-text {
   position: relative;
+  text-decoration: inherit;
 }
 </style>

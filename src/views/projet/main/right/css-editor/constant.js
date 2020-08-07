@@ -86,12 +86,28 @@ export const FontAlignOptions = [
     label: '右对齐',
     value: 'right'
   },
-  {
-    label: '两端对齐',
-    value: 'justify'
-  },
+  // {
+  //   label: '两端对齐',
+  //   value: 'justify'
+  // },
   {
     label: '从父节点继承',
     value: 'inherit'
+  }
+];
+
+/* 文字划线 */
+export const FontTextDecorationOptions = [
+  {
+    label: '无',
+    value: 'none'
+  },
+  {
+    label: '下划线',
+    value: 'underline'
+  },
+  {
+    label: '删除线',
+    value: 'line-through'
   }
 ];

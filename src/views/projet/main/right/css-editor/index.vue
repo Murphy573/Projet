@@ -177,6 +177,16 @@
               class="el-form-item-bottom-0">
               <AttrColorpicker v-model="cmpt_activeElementCss.color" />
             </el-form-item>
+            <el-form-item label="划线">
+              <el-select v-model="cmpt_activeElementCss.textDecoration"
+                class="full-width">
+                <el-option v-for="font of fontTextDecorationOptionsDef"
+                  :key="font.value"
+                  :label="font.label"
+                  :value="font.value">
+                </el-option>
+              </el-select>
+            </el-form-item>
           </el-form>
         </el-collapse-item>
       </el-collapse>
@@ -189,7 +199,8 @@ import {
   SizeOptions,
   BorderStyleOptions,
   FontWeightOptions,
-  FontAlignOptions
+  FontAlignOptions,
+  FontTextDecorationOptions
 } from './constant';
 import AttrColorpicker from '../props-editor/components/AttrColorpicker';
 import AttrImageUpload from '../props-editor/components/AttrImageUpload';
@@ -212,7 +223,8 @@ export default {
       sizeOptionsDef: SizeOptions,
       borderStyleOptionsDef: BorderStyleOptions,
       fontWeightOptionsDef: FontWeightOptions,
-      fontAlignOptionsDef: FontAlignOptions
+      fontAlignOptionsDef: FontAlignOptions,
+      fontTextDecorationOptionsDef: FontTextDecorationOptions
     };
   },
 

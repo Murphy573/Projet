@@ -43,6 +43,7 @@ const CommonCss = {
   lineHeight: 1.2,
   textAlign: 'left',
   color: '',
+  textDecoration: 'none',
   // 背景
   backgroundColor: '',
   backgroundImage: '',
