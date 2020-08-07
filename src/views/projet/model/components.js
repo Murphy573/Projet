@@ -16,6 +16,11 @@ export default [
         componentName: 'ProjetImage',
         label: '图片',
         icon: 'icontupian'
+      },
+      {
+        componentName: 'ProjetFlexContainer',
+        label: '弹性容器',
+        icon: 'icontupian'
       }
     ]
   }

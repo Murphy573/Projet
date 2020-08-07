@@ -198,7 +198,7 @@ export default createComponent({
 
   defaultCss: {
     width: 300,
-    height: 300
+    height: 112
   }
 });
 </script>

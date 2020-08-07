@@ -27,7 +27,10 @@ const CommonCss = {
   backgroundColor: '',
   backgroundImage: '',
   backgroundSize: 'cover',
-  opacity: 1
+  opacity: 1,
+  // 弹性盒子缩小
+  flexShrink: 0,
+  flexGrow: 0
 };
 
 export function copyCommonCss () {

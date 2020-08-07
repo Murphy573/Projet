@@ -1,8 +1,8 @@
 <template>
-  <div class="projet-text"
+  <span class="projet-text"
     :style="cmpt_style">
     {{title}}
-  </div>
+  </span>
 </template>
 
 <script>
@@ -29,6 +29,7 @@ export default createComponent({
         {},
         this.css,
         {
+          display: 'inline-block',
           backgroundImage: `url(${this.img})`,
           color: this.color
         });
@@ -36,8 +37,9 @@ export default createComponent({
   },
 
   defaultCss: {
-    width: 200,
-    height: 50
+    width: '200',
+    height: 'auto',
+    wordBreak: 'break-all'
   }
 });
 </script>
@@ -45,7 +47,5 @@ export default createComponent({
 <style lang="scss" scoped>
 .projet-text {
   position: relative;
-  word-break: break-all;
-  overflow: hidden;
 }
 </style>
