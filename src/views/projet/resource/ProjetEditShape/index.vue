@@ -52,12 +52,12 @@ export default {
 
   &.active {
     > .border-line {
-      border: 1px dashed $--color-primary;
+      border: 2px dashed $--color-primary;
     }
   }
   &:hover {
     > .border-line {
-      border: 1px dashed $--color-primary;
+      border: 2px dashed $--color-primary;
     }
   }
 }

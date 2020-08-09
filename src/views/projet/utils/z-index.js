@@ -1,4 +1,4 @@
-let start = -1;
+let start = 1;
 
 export default {
   get zIndex () {

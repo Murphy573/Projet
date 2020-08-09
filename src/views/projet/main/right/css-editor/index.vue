@@ -19,8 +19,7 @@
                   :label="size.label"></el-option>
               </el-select>
             </el-form-item>
-            <el-form-item label="高度"
-              class="el-form-item-bottom-0">
+            <el-form-item label="高度">
               <el-select v-model="cmpt_activeElementCss.height"
                 filterable
                 default-first-option
@@ -31,6 +30,39 @@
                   :value="size.value"
                   :label="size.label"></el-option>
               </el-select>
+            </el-form-item>
+            <el-form-item label="缩小比例">
+              <template #label>
+                <span>缩小比例</span>
+                <el-tooltip effect="dark"
+                  popper-class="tooltip-class"
+                  content="如果该弹性盒子下一个项目的该属性为0，其他项目都为1，则空间不足时，前者不缩小；如果该弹性盒子下所有项目的该属性都为1，当空间不足时，都将等比例缩小；">
+                  <span style="margin-left:2px;">
+                    <i class="el-icon-info" />
+                  </span>
+                </el-tooltip>
+              </template>
+              <el-input-number v-model="cmpt_activeElementCss.flexShrink"
+                controls-position="right"
+                :min="0"
+                class="full-width" />
+            </el-form-item>
+            <el-form-item label="放大比例"
+              class="el-form-item-bottom-0">
+              <template #label>
+                <span>放大比例</span>
+                <el-tooltip effect="dark"
+                  popper-class="tooltip-class"
+                  content="如果该弹性盒子下一个项目的该属性为0，其他项目都为1，则存在剩余空间，前者不放大；如果该弹性盒子下所有项目的该属性都为1，当存在剩余空间，都将等比例放大；">
+                  <span style="margin-left:2px;">
+                    <i class="el-icon-info" />
+                  </span>
+                </el-tooltip>
+              </template>
+              <el-input-number v-model="cmpt_activeElementCss.flexGrow"
+                controls-position="right"
+                :min="0"
+                class="full-width" />
             </el-form-item>
           </el-form>
         </el-collapse-item>
@@ -173,11 +205,11 @@
               <el-input v-model="cmpt_activeElementCss.lineHeight"
                 class="full-width" />
             </el-form-item>
-            <el-form-item label="颜色"
-              class="el-form-item-bottom-0">
+            <el-form-item label="颜色">
               <AttrColorpicker v-model="cmpt_activeElementCss.color" />
             </el-form-item>
-            <el-form-item label="划线">
+            <el-form-item label="划线"
+              class="el-form-item-bottom-0">
               <el-select v-model="cmpt_activeElementCss.textDecoration"
                 class="full-width">
                 <el-option v-for="font of fontTextDecorationOptionsDef"
@@ -219,7 +251,7 @@ export default {
 
   data () {
     return {
-      actives: ['5'],
+      actives: ['1'],
       sizeOptionsDef: SizeOptions,
       borderStyleOptionsDef: BorderStyleOptions,
       fontWeightOptionsDef: FontWeightOptions,
@@ -261,5 +293,10 @@ export default {
       }
     }
   }
+}
+</style>
+<style lang="scss">
+.tooltip-class {
+  max-width: 200px !important;
 }
 </style>
