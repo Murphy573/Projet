@@ -23,25 +23,13 @@ import CssEditor from './css-editor/index';
 export default {
   name: 'MainRight',
 
-  mixins: [],
-
   components: { PropsEditor, CssEditor },
-
-  props: {},
 
   data () {
     return {
-      activeName: 'css'
+      activeName: 'prop'
     };
-  },
-
-  computed: {},
-
-  watch: {},
-
-  created () { },
-
-  methods: {}
+  }
 };
 </script>
 

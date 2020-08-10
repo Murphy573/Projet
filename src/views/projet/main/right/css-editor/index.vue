@@ -251,8 +251,6 @@ export default {
 
   components: { MyElScrollbar, AttrColorpicker, AttrImageUpload },
 
-  props: {},
-
   data () {
     return {
       actives: ['1'],

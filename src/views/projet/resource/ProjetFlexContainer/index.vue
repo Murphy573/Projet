@@ -6,7 +6,9 @@
       :active="item.uid === vx_gt_activeElementUid"
       :style="formatCommonCss(item.css)"
       @element-click="handleElementClick(item.uid)">
+
       <component :is="item.componentName"
+        :uid="item.uid"
         v-bind="item.props" />
     </ProjetEditShape>
   </div>

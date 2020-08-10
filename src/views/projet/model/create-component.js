@@ -10,6 +10,11 @@ export default function (config, hasElements = false) {
     config.props = {};
   }
   // 样式
+  config.props.uid = {
+    type: String,
+    default: ''
+  };
+  // 样式
   config.props.css = {
     type: Object,
     default () {

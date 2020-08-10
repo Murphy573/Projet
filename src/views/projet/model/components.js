@@ -21,6 +21,11 @@ export default [
         componentName: 'ProjetFlexContainer',
         label: '弹性容器',
         icon: 'icontupian'
+      },
+      {
+        componentName: 'ProjetSwiper',
+        label: '轮播容器',
+        icon: 'icontupian'
       }
     ]
   }

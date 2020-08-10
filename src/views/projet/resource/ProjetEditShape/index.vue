@@ -1,5 +1,5 @@
 <template>
-  <div class="edit-shape"
+  <div class="projet-edit-shape"
     :class="{active: active}"
     @click.stop="handleTopWrapperClick">
     <div class="border-line"
@@ -34,7 +34,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.edit-shape {
+.projet-edit-shape {
   width: max-content;
   height: max-content;
   position: relative !important;

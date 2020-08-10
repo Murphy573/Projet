@@ -16,7 +16,10 @@ import i18n from './i18n';
 // 路由拦截
 import './router/router-event';
 
-import './icons'; // icon
+// 引入vant使用的组件
+import './libs/vant';
+// icon
+import './icons';
 import './directive';
 // 引入全局filter
 import './filters';

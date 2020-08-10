@@ -1,12 +1,14 @@
 <template>
   <div class="project-page"
     :style="formatCommonCss(vx_gt_pageData.css)">
+    {{vx_gt_activeElementPuid}}
     <ProjetEditShape v-for="item in vx_gt_pageData.props.elements"
       :key="item.uuid"
       :active="item.uid === vx_gt_activeElementUid"
       @element-click="handleElementClick(item.uid)"
       :style="formatCommonCss(item.css)">
       <component :is="item.componentName"
+        :uid="item.uid"
         v-bind="item.props" />
     </ProjetEditShape>
   </div>
@@ -47,7 +49,7 @@ export default createComponent({
   },
 
   computed: {
-    ...mapGetters(['vx_gt_pageData', 'vx_gt_activeElementUid'])
+    ...mapGetters(['vx_gt_pageData', 'vx_gt_activeElementUid', 'vx_gt_activeElementPuid'])
   },
 
   methods: {
