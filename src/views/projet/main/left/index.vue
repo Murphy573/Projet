@@ -36,11 +36,7 @@ import TemplatesLibs from './components/templates-libs';
 export default {
   name: 'MainLeft',
 
-  mixins: [],
-
   components: { ComponentsLibs, LayersManagement, TemplatesLibs },
-
-  props: {},
 
   data () {
     return {
@@ -63,15 +59,7 @@ export default {
         }
       ]
     };
-  },
-
-  computed: {},
-
-  watch: {},
-
-  created () { },
-
-  methods: {}
+  }
 };
 </script>
 
@@ -89,13 +77,21 @@ export default {
   }
 
   .right {
-    flex: 1;
+    flex-shrink: 0;
+    flex-grow: 0;
+    width: 225px;
+    height: 100%;
   }
 
   ::v-deep {
-    .el-tabs__nav-scroll {
-      .el-tabs__item.is-active {
-        background: rgba($color: #409eff, $alpha: 0.1);
+    .el-tabs.el-tabs--left {
+      .el-tabs__header.is-left {
+        margin-right: 0;
+      }
+      .el-tabs__nav-scroll {
+        .el-tabs__item.is-active {
+          background: rgba($color: #409eff, $alpha: 0.1);
+        }
       }
     }
   }

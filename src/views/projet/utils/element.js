@@ -41,6 +41,42 @@ export const findActiveElement = (elementsData, uid) => {
 };
 
 /**
+ * 生成组件tree
+ * @param {Object|Array} elementsData 页面数据
+ * @param {String} defaultTitle 当元素title未设置时，默认的title
+ */
+export const genElementTree = (elementsData, defaultTitle = '未命名元素') => {
+  let _elementsData = [];
+  if (isPlainObj(elementsData)) {
+    _elementsData = [elementsData];
+  }
+  else if (isArray(elementsData)) {
+    _elementsData = elementsData;
+  }
+
+  let _tree = (data) => {
+    return data.map(d => {
+      let { uid, puid } = d;
+      let { title, elements } = d.props || {};
+
+      let _formatD = {
+        uid,
+        puid,
+        title: title || defaultTitle
+      };
+
+      if (isArray(elements) && elements.length) {
+        _formatD.elements = _tree(elements);
+      }
+
+      return _formatD;
+    });
+  };
+
+  return _tree(_elementsData);
+};
+
+/**
  * 获取组件的props和默认样式
  * @param {String} componentName 组件名称
  */

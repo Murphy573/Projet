@@ -1,5 +1,5 @@
 <template>
-  <div class="projet-text"
+  <div class="projet-sample"
     :style="cmpt_style">
     <ul>
       <li>文本内容：{{title}}</li>

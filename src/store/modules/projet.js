@@ -1,7 +1,7 @@
 /* 编辑器核心 */
 import { InitNewPage } from '@/views/projet/model/page';
 import { InitNewElement } from '@/views/projet/model/element';
-import { findActiveElement } from '@/views/projet/utils/element';
+import { findActiveElement, genElementTree } from '@/views/projet/utils/element';
 import { showMessage } from '@/views/projet/utils/common';
 import { isArray } from '@/utils/common';
 
@@ -24,8 +24,16 @@ export default {
     vx_gt_activeElementUid (state) {
       return state.activeElementUid;
     },
+    // 是否激活的是根元素
+    vx_gt_activeRootElement (state) {
+      return state.activeElementUid === state.pageData.uid;
+    },
     vx_gt_activeElementData (state) {
       return findActiveElement(state.pageData, state.activeElementUid);
+    },
+    // 生成组件tree
+    vx_gt_genElementsTree (state) {
+      return genElementTree(state.pageData);
     }
   },
   mutations: {

@@ -9,6 +9,7 @@
             size="small">
             <el-form-item label="宽度">
               <el-select v-model="cmpt_activeElementCss.width"
+                :disabled="vx_gt_activeRootElement"
                 filterable
                 default-first-option
                 allow-create
@@ -21,6 +22,7 @@
             </el-form-item>
             <el-form-item label="高度">
               <el-select v-model="cmpt_activeElementCss.height"
+                :disabled="vx_gt_activeRootElement"
                 filterable
                 default-first-option
                 allow-create
@@ -43,6 +45,7 @@
                 </el-tooltip>
               </template>
               <el-input-number v-model="cmpt_activeElementCss.flexShrink"
+                :disabled="vx_gt_activeRootElement"
                 controls-position="right"
                 :min="0"
                 class="full-width" />
@@ -60,6 +63,7 @@
                 </el-tooltip>
               </template>
               <el-input-number v-model="cmpt_activeElementCss.flexGrow"
+                :disabled="vx_gt_activeRootElement"
                 controls-position="right"
                 :min="0"
                 class="full-width" />
@@ -261,7 +265,7 @@ export default {
   },
 
   computed: {
-    ...mapGetters(['vx_gt_activeElementData']),
+    ...mapGetters(['vx_gt_activeElementData', 'vx_gt_activeRootElement']),
     cmpt_activeElementCss () {
       return this.vx_gt_activeElementData.css;
     }
