@@ -3,7 +3,8 @@
     <h3 class="title">图层管理</h3>
     <div class="content">
       <MyElScrollbar>
-        <el-tree :data="vx_gt_genElementsTree"
+        <el-tree ref="tree"
+          :data="vx_gt_genElementsTree"
           node-key="uid"
           :default-expanded-keys="cmpt_defaultExpandKeys"
           :props="defaultProps"
@@ -44,8 +45,13 @@ export default {
     }
   },
 
-  methods: {
+  watch: {
+    vx_gt_activeElementUid (v) {
+      this.$refs.tree && this.$refs.tree.setCurrentKey(v);
+    }
+  },
 
+  methods: {
     ...mapActions(['vx_ac_SetActiveElementUid']),
     handleNodeClick (data) {
       this.vx_ac_SetActiveElementUid(data.uid);

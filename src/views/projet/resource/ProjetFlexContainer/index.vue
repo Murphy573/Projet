@@ -6,7 +6,7 @@
       :active="item.uid === vx_gt_activeElementUid"
       :style="formatCommonCss(item.css)"
       @element-click="handleElementClick(item.uid)">
-
+      <!-- 动态子元素 -->
       <component :is="item.componentName"
         :uid="item.uid"
         v-bind="item.props" />
@@ -18,8 +18,8 @@
 import {
   PROJET_ATTR_STRING,
   PROJET_ATTR_SELECT,
-  PROJET_ATTR_RADIO,
-  PROJET_ATTR_SWITCH
+  PROJET_ATTR_RADIO
+  // PROJET_ATTR_SWITCH
 } from '@/views/projet/model/attr.editor';
 import ProjetEditShape from '../ProjetEditShape';
 import createComponent from '@/views/projet/model/create-component';
@@ -125,31 +125,31 @@ export default createComponent({
           }
         ]
       }
-    },
-    overflowx: {
-      type: String,
-      default: 'hidden',
-      editor: {
-        label: '横向滚动',
-        type: PROJET_ATTR_SWITCH,
-        options: [
-          {
-            label: '',
-            // 激活时的值
-            value: 'auto',
-            // 激活时的组件背景色
-            color: '#13ce66'
-          },
-          {
-            label: '',
-            // 未激活时的值
-            value: 'hidden',
-            // 未激活时的组件背景色
-            color: '#ff4949'
-          }
-        ]
-      }
     }
+    // overflowx: {
+    //   type: String,
+    //   default: 'hidden',
+    //   editor: {
+    //     label: '横向滚动',
+    //     type: PROJET_ATTR_SWITCH,
+    //     options: [
+    //       {
+    //         label: '',
+    //         // 激活时的值
+    //         value: 'auto',
+    //         // 激活时的组件背景色
+    //         color: '#13ce66'
+    //       },
+    //       {
+    //         label: '',
+    //         // 未激活时的值
+    //         value: 'hidden',
+    //         // 未激活时的组件背景色
+    //         color: '#ff4949'
+    //       }
+    //     ]
+    //   }
+    // }
   },
 
   data () {
@@ -169,8 +169,8 @@ export default createComponent({
           flexDirection: this.direction,
           flexWrap: this.wrap,
           justifyContent: this.justify,
-          alignItems: this.align,
-          overflowX: this.overflowx
+          alignItems: this.align
+          // overflowX: this.overflowx
         });
     }
   },

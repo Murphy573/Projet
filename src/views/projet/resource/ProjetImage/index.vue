@@ -1,7 +1,10 @@
 <template>
-  <img class="projet-img"
-    :style="cmpt_style"
-    :src="src" />
+  <div class="projet-img"
+    :style="css">
+    <img :src="src"
+      :style="cmpt_imgStyle" />
+  </div>
+
 </template>
 
 <script>
@@ -26,7 +29,8 @@ export default createComponent({
     },
     src: {
       type: String,
-      default: 'https://dummyimage.com/800x300.jpg',
+      default: 'https://m.360buyimg.com/mobilecms/s700x280_jfs/t1/123624/24/2195/99979/5ec3a165E12b276e2/2e5b8a2606fbabfe.jpg!q70.jpg.dpg',
+      // default: 'https://dummyimage.com/800x300.jpg',
       editor: {
         label: '图片链接',
         type: PROJET_ATTR_IMAGEUPLOAD
@@ -58,12 +62,17 @@ export default createComponent({
         {},
         this.css,
         {
-          objectFit: this.fit
-        });
+          // 解决弹性垂直方向：图片不能等分
+          overflow: 'hidden'
+        }
+      );
+    },
+    cmpt_imgStyle () {
+      return {
+        objectFit: this.fit
+      };
     }
   },
-
-  methods: {},
 
   defaultCss: {
     width: 375,
@@ -77,5 +86,10 @@ export default createComponent({
   display: block;
   width: 100%;
   height: 100%;
+
+  > img {
+    width: 100%;
+    height: 100%;
+  }
 }
 </style>

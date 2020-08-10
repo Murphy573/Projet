@@ -1,5 +1,6 @@
 <template>
-  <div class="projet-swiper">
+  <div class="projet-swiper"
+    :style="cmpt_style">
     <van-swipe class="swiper"
       ref="swiper"
       :autoplay="cmpt_autoplay"
@@ -99,6 +100,11 @@ export default createComponent({
       if (!this.autoplay) return 0;
       let _interval = this.interval * 1000;
       return _interval < 0 ? 1000 : _interval;
+    },
+    cmpt_style () {
+      return Object.assign(
+        {},
+        this.css);
     }
   },
 

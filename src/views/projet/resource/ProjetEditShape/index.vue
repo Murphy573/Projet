@@ -35,9 +35,8 @@ export default {
 
 <style lang="scss" scoped>
 .projet-edit-shape {
-  width: max-content;
-  height: max-content;
   position: relative !important;
+  overflow: hidden;
   cursor: pointer;
 
   > .border-line {
