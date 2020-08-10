@@ -37,7 +37,8 @@ export default createComponent({
   },
 
   defaultCss: {
-    width: '200',
+    width: 100,
+    height: 40,
     wordBreak: 'break-all'
   }
 });

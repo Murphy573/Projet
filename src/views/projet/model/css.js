@@ -50,9 +50,9 @@ const CommonCss = {
   backgroundPosition: 'center',
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat',
-  // 弹性盒子缩小
-  flexShrink: 0,
-  flexGrow: 0
+  // 弹性盒子内项目缩小、放大比例
+  flexShrink: 1,
+  flexGrow: 1
 };
 
 export function copyCommonCss () {
