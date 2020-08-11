@@ -109,6 +109,16 @@ export default createComponent({
   },
 
   watch: {
+    vx_gt_activeElementUid () {
+      this.$nextTick(_ => {
+        if (this.vx_gt_activeElementPuid !== this.uid) return;
+        // 监听uid，切换到对应item
+        let _index = this.elements.findIndex(ele => ele.uid === this.vx_gt_activeElementUid);
+        if (_index > -1) {
+          this.$refs.swiper && this.$refs.swiper.swipeTo(_index);
+        }
+      });
+    },
     elements: {
       handler () {
         this.$nextTick(_ => {
