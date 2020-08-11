@@ -3,7 +3,8 @@ import { InitNewPage } from '@/views/projet/model/page';
 import { InitBasicElement, InitComplexElement } from '@/views/projet/model/element';
 import {
   findActiveElement,
-  genElementTree
+  genElementTree,
+  findActiveElementInParentIndex
 } from '@/views/projet/utils/element';
 import { showMessage } from '@/views/projet/utils/common';
 import { isArray } from '@/utils/common';
@@ -62,6 +63,42 @@ export default {
     vx_gt_canPaste (state) {
       return !!state.copiedElement;
     },
+    // 是否可以前移
+    vx_gt_canMoveForward (state, getters) {
+      let {
+        vx_gt_activeRootElement,
+        vx_gt_activeElementParentData,
+        vx_gt_activeElementUid
+      } = getters;
+
+      if (vx_gt_activeRootElement) {
+        return false;
+      }
+
+      let _index = findActiveElementInParentIndex(vx_gt_activeElementParentData, vx_gt_activeElementUid);
+
+      return _index > 0;
+    },
+    // 是否可以后移
+    vx_gt_canMoveBackward (state, getters) {
+      let {
+        vx_gt_activeRootElement,
+        vx_gt_activeElementParentData,
+        vx_gt_activeElementUid
+      } = getters;
+
+      if (vx_gt_activeRootElement) {
+        return false;
+      }
+
+      let _index = findActiveElementInParentIndex(vx_gt_activeElementParentData, vx_gt_activeElementUid);
+
+      return _index < vx_gt_activeElementParentData.props.elements.length - 1;
+    },
+    // 是否可以删除元素：不能删除根元素
+    vx_gt_canDelElement (state) {
+      return state.activeElementUid !== state.pageData.uid;
+    },
     // 是否可以撤销
     vx_gt_canUndo (state) {
       return state.curHistoryIndex > 0;
@@ -99,6 +136,25 @@ export default {
         return;
       };
       state.copiedElement = element;
+    },
+    /* 前移或者后移 */
+    SET_MOVEFORWARDANDBACKWORD (state, data) {
+      let { parentElements, index, flag } = data;
+      if (flag === 'forward') {
+        let _prev = parentElements[index - 1];
+        let _cur = parentElements[index];
+        parentElements.splice(index - 1, 2, _cur, _prev);
+      }
+      else if (flag === 'backward') {
+        let _next = parentElements[index + 1];
+        let _cur = parentElements[index];
+        parentElements.splice(index, 2, _next, _cur);
+      }
+    },
+    /* 删除元素 */
+    DEL_ELEMENT (state, data) {
+      let { parentElements, index } = data;
+      parentElements.splice(index, 1);
     }
   },
   actions: {
@@ -177,6 +233,37 @@ export default {
       dispatch('vx_ac_AddComplexElement', getters.vx_gt_copiedElementData);
       // 重置
       commit('SET_COPIEDELEMENT', '');
+    },
+    /* 前移和后移 */
+    vx_ac_MoveForwardAndBackward ({ getters, commit, dispatch }, flag = 'forward') {
+      let {
+        vx_gt_activeElementParentData,
+        vx_gt_activeElementUid
+      } = getters;
+
+      let _index = findActiveElementInParentIndex(vx_gt_activeElementParentData, vx_gt_activeElementUid);
+
+      commit('SET_MOVEFORWARDANDBACKWORD', {
+        parentElements: vx_gt_activeElementParentData.props.elements,
+        index: _index,
+        flag
+      });
+      dispatch('vx_ac_AddHistory');
+    },
+    /* 前移和后移 */
+    vx_ac_DelElement ({ getters, commit, dispatch }) {
+      let {
+        vx_gt_activeElementParentData,
+        vx_gt_activeElementUid
+      } = getters;
+
+      let _index = findActiveElementInParentIndex(vx_gt_activeElementParentData, vx_gt_activeElementUid);
+
+      commit('DEL_ELEMENT', {
+        parentElements: vx_gt_activeElementParentData.props.elements,
+        index: _index
+      });
+      dispatch('vx_ac_AddHistory');
     },
     /* 添加历史记录 */
     vx_ac_AddHistory ({ getters, commit }) {

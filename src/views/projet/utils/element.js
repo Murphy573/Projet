@@ -137,3 +137,14 @@ export function getComponentPropsEditors (componentName) {
 
   return editorList;
 }
+
+/**
+ * 找出当前元素在父元素中的索引
+ * @param {Object} parentElement 父元素数据
+ * @param {String} activeUid 当前激活元素的uid
+ */
+export const findActiveElementInParentIndex = (parentElement, activeUid) => {
+  return parentElement.props.elements.findIndex(el => {
+    return el.uid === activeUid;
+  });
+};

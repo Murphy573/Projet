@@ -99,6 +99,7 @@ export default {
         margin-right: 12px;
         min-width: 40px;
         cursor: pointer;
+        user-select: none;
 
         &:hover {
           background: #ddd;
