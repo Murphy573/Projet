@@ -17,14 +17,18 @@
           <i class="iconfont iconredo" />
           <p>反撤销</p>
         </li>
-        <li class="bar-item active">
+        <!-- <li class="bar-item"
+          :class="{active: vx_gt_isDevMode}"
+          @click="setMode(true)">
           <i class="iconfont iconicon4" />
           <p>开发</p>
         </li>
-        <li class="bar-item">
+        <li class="bar-item"
+          :class="{active: !vx_gt_isDevMode}"
+          @click="setMode(false)">
           <i class="iconfont iconyulan" />
           <p>预览</p>
-        </li>
+        </li> -->
         <li class="bar-item">
           <i class="iconfont iconbaocun" />
           <p>保存</p>
@@ -49,11 +53,11 @@ export default {
   name: 'ProjetHeader',
 
   computed: {
-    ...mapGetters(['vx_gt_canUndo', 'vx_gt_canRedo'])
+    ...mapGetters(['vx_gt_canUndo', 'vx_gt_canRedo', 'vx_gt_isDevMode'])
   },
 
   methods: {
-    ...mapActions(['vx_ac_UndoAndRedo']),
+    ...mapActions(['vx_ac_UndoAndRedo', 'vx_ac_SetDevMode']),
     undo () {
       if (!this.vx_gt_canUndo) return;
       this.vx_ac_UndoAndRedo('undo');
@@ -61,6 +65,9 @@ export default {
     redo () {
       if (!this.vx_gt_canRedo) return;
       this.vx_ac_UndoAndRedo('redo');
+    },
+    setMode (flag = true) {
+      this.vx_ac_SetDevMode(flag);
     }
   }
 };
@@ -102,7 +109,8 @@ export default {
         user-select: none;
 
         &:hover {
-          background: #ddd;
+          color: #409eff;
+          background: rgba($color: $--color-primary, $alpha: 0.1);
         }
 
         &.disabled {
@@ -116,9 +124,6 @@ export default {
         &.active {
           color: #409eff;
           background: rgba($color: $--color-primary, $alpha: 0.1);
-          &:hover {
-            background: rgba($color: $--color-primary, $alpha: 0.1);
-          }
         }
 
         p {

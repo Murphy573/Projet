@@ -1,7 +1,6 @@
 <template>
   <div class="project-page"
     :style="formatCommonCss(vx_gt_pageData.css)">
-    {{vx_gt_activeElementPuid}}
     <ProjetEditShape v-for="item in vx_gt_pageData.props.elements"
       :key="item.uuid"
       :active="item.uid === vx_gt_activeElementUid"

@@ -42,5 +42,6 @@ export default function (config, hasElements = false) {
       }
     };
   }
+
   return config;
 }

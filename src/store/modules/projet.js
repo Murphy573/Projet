@@ -21,7 +21,9 @@ export default {
     // 复制的元素JSON串
     copiedElement: '',
     // 历史缓存索引
-    curHistoryIndex: -1
+    curHistoryIndex: -1,
+    // 是否是开发模式
+    isDevMode: true
   },
   getters: {
     vx_gt_pageData (state) {
@@ -106,6 +108,10 @@ export default {
     // 是否可以反撤销
     vx_gt_canRedo (state) {
       return state.curHistoryIndex < History.length - 1;
+    },
+    // 是否是开发模式
+    vx_gt_isDevMode (state) {
+      return !!state.isDevMode;
     }
   },
   mutations: {
@@ -155,6 +161,9 @@ export default {
     DEL_ELEMENT (state, data) {
       let { parentElements, index } = data;
       parentElements.splice(index, 1);
+    },
+    SET_DEVMODE (state, mode = true) {
+      state.isDevMode = mode;
     }
   },
   actions: {
@@ -298,6 +307,10 @@ export default {
         commit('SET_ACTIVEELEMENTUID', uid);
         commit('SET_CURHISTORYINDEX', History.index);
       }
+    },
+    /* 添加历史记录 */
+    vx_ac_SetDevMode ({ commit }, mode = true) {
+      commit('SET_DEVMODE', !!mode);
     }
   }
 };
