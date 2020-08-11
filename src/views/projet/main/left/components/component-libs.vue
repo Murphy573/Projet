@@ -94,6 +94,7 @@ export default {
           margin-bottom: 10px;
           cursor: pointer;
           transition: All 0.3s ease-in-out;
+          user-select: none;
 
           &:hover {
             border-color: rgba($color: $--color-primary, $alpha: 1);

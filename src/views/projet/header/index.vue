@@ -1,16 +1,19 @@
 <template>
   <div class="projet-header">
     <section class="left">
-      Projet
+      Projet undo: {{vx_gt_canUndo}}
     </section>
     <section class="center">
       <ul class="control-bar">
-        <li class="bar-item disabled"
+        <li class="bar-item"
+          :class="{disabled: !vx_gt_canUndo}"
           @click="undo">
           <i class="iconfont iconundo" />
           <p>撤销</p>
         </li>
-        <li class="bar-item">
+        <li class="bar-item"
+          :class="{disabled: !vx_gt_canRedo}"
+          @click="redo">
           <i class="iconfont iconredo" />
           <p>反撤销</p>
         </li>
@@ -38,31 +41,26 @@
 </template>
 
 <script>
+import { createNamespacedHelpers } from 'vuex';
+
+const { mapActions, mapGetters } = createNamespacedHelpers('Projet');
 
 export default {
   name: 'ProjetHeader',
 
-  mixins: [],
-
-  components: {},
-
-  props: {},
-
-  data () {
-    return {
-
-    };
+  computed: {
+    ...mapGetters(['vx_gt_canUndo', 'vx_gt_canRedo'])
   },
 
-  computed: {},
-
-  watch: {},
-
-  created () { },
-
   methods: {
+    ...mapActions(['vx_ac_UndoAndRedo']),
     undo () {
-      alert(1);
+      if (!this.vx_gt_canUndo) return;
+      this.vx_ac_UndoAndRedo('undo');
+    },
+    redo () {
+      if (!this.vx_gt_canRedo) return;
+      this.vx_ac_UndoAndRedo('redo');
     }
   }
 };

@@ -7,6 +7,7 @@ import {
 } from '@/views/projet/utils/element';
 import { showMessage } from '@/views/projet/utils/common';
 import { isArray } from '@/utils/common';
+import History from '@/views/projet/utils/history';
 
 export default {
   namespaced: true,
@@ -16,8 +17,7 @@ export default {
     activeElementPuid: null,
     // 当前激活元素id
     activeElementUid: null,
-    // 历史缓存
-    historyCache: [],
+    // 历史缓存索引
     curHistoryIndex: -1
   },
   getters: {
@@ -47,6 +47,14 @@ export default {
     // 生成组件tree
     vx_gt_genElementsTree (state) {
       return genElementTree(state.pageData);
+    },
+    // 是否可以撤销
+    vx_gt_canUndo (state) {
+      return state.curHistoryIndex > 0;
+    },
+    // 是否可以反撤销
+    vx_gt_canRedo (state) {
+      return state.curHistoryIndex < History.length - 1;
     }
   },
   mutations: {
@@ -67,6 +75,9 @@ export default {
     SET_ACTIVEELEMENTUID (state, uid = '') {
       if (!uid) return;
       state.activeElementUid = uid;
+    },
+    SET_CURHISTORYINDEX (state, index = -1) {
+      state.curHistoryIndex = index;
     }
   },
   actions: {
@@ -77,14 +88,16 @@ export default {
       commit('SET_ACTIVEELEMENTPUID', getters.vx_gt_activeElementData.puid);
     },
     /* 添加页面 */
-    vx_ac_AddPage ({ commit }) {
+    vx_ac_AddPage ({ commit, dispatch }) {
       let _page = InitNewPage();
       commit('ADD_PAGE', _page);
       commit('SET_ACTIVEELEMENTPUID', _page.uid);
       commit('SET_ACTIVEELEMENTUID', _page.puid);
+
+      dispatch('vx_ac_AddHistory');
     },
     /* 添加元素组件 */
-    vx_ac_AddElement ({ commit, getters }, componentName = null) {
+    vx_ac_AddElement ({ commit, getters, dispatch }, componentName = null) {
       if (!componentName) return;
       let { vx_gt_activeElementData, vx_gt_activeElementUid } = getters;
       if (!isArray(vx_gt_activeElementData.props.elements)) {
@@ -98,6 +111,40 @@ export default {
       commit('ADD_ELEMENT', _elementData);
       commit('SET_ACTIVEELEMENTPUID', _elementData.puid);
       commit('SET_ACTIVEELEMENTUID', _elementData.uid);
+
+      dispatch('vx_ac_AddHistory');
+    },
+    /* 添加历史记录 */
+    vx_ac_AddHistory ({ getters, commit }) {
+      let { vx_gt_pageData, vx_gt_activeElementUid, vx_gt_activeElementPuid } = getters;
+
+      History.add({
+        pageData: vx_gt_pageData,
+        uid: vx_gt_activeElementUid,
+        puid: vx_gt_activeElementPuid
+      });
+      commit('SET_CURHISTORYINDEX', History.index);
+    },
+    /* 撤销，反撤销 */
+    vx_ac_UndoAndRedo ({ commit }, flag = 'undo') {
+      let historyData = {};
+      if (flag === 'undo') {
+        historyData = History.getPrev();
+      }
+      else if (flag === 'redo') {
+        historyData = History.getNext();
+      }
+
+      if (!historyData) {
+        showMessage('未找到历史记录数据！');
+      }
+      else {
+        let { pageData, uid, puid } = historyData;
+        commit('ADD_PAGE', pageData);
+        commit('SET_ACTIVEELEMENTPUID', puid);
+        commit('SET_ACTIVEELEMENTUID', uid);
+        commit('SET_CURHISTORYINDEX', History.index);
+      }
     }
   }
 };
