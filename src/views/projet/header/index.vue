@@ -1,7 +1,7 @@
 <template>
   <div class="projet-header">
     <section class="left">
-      Projet undo: {{vx_gt_canUndo}}
+      Projet
     </section>
     <section class="center">
       <ul class="control-bar">
@@ -76,9 +76,11 @@ export default {
   justify-content: space-between;
   align-items: center;
 
-  .left,
+  .left {
+    width: 280px;
+  }
   .right {
-    width: 60px;
+    width: 415px;
   }
 
   .center {
