@@ -48,7 +48,7 @@ export function InitComplexElement (componentJson, puid) {
       });
     };
 
-    return _map(_elementsData, puid)[0];
+    return _map(_elementsData, puid);
   }
   catch (error) {
     return null;

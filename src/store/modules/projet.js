@@ -143,13 +143,18 @@ export default {
         showMessage('当前元素不支持插入子元素');
         return;
       }
-      let _elementData = InitComplexElement(componentJson, vx_gt_activeElementUid);
+      let _elementDatas = InitComplexElement(componentJson, vx_gt_activeElementUid);
 
-      commit('ADD_ELEMENT', _elementData);
-      commit('SET_ACTIVEELEMENTPUID', _elementData.puid);
-      commit('SET_ACTIVEELEMENTUID', _elementData.uid);
+      if (isArray(_elementDatas) && _elementDatas.length) {
+        _elementDatas.forEach(el => {
+          commit('ADD_ELEMENT', el);
+        });
 
-      dispatch('vx_ac_AddHistory');
+        let { puid, uid } = _elementDatas[_elementDatas.length - 1];
+        commit('SET_ACTIVEELEMENTPUID', puid);
+        commit('SET_ACTIVEELEMENTUID', uid);
+        dispatch('vx_ac_AddHistory');
+      }
     },
     /* 复制元素 */
     async vx_ac_CopyElement ({ commit, getters }) {
