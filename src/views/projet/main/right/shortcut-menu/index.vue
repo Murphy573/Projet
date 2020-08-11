@@ -95,11 +95,10 @@ export default {
   height: 100%;
   background: #ffffff;
   font-size: 14px;
-  padding: 5px 0;
+  padding: 25px 0;
 
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 
   .menu-item {

@@ -47,7 +47,9 @@ export default {
 
   watch: {
     vx_gt_activeElementUid (v) {
-      this.$refs.tree && this.$refs.tree.setCurrentKey(v);
+      this.$nextTick(_ => {
+        this.$refs.tree && this.$refs.tree.setCurrentKey(v);
+      });
     }
   },
 

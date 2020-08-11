@@ -250,7 +250,7 @@ export default {
       });
       dispatch('vx_ac_AddHistory');
     },
-    /* 前移和后移 */
+    /* 删除元素 */
     vx_ac_DelElement ({ getters, commit, dispatch }) {
       let {
         vx_gt_activeElementParentData,
@@ -263,6 +263,8 @@ export default {
         parentElements: vx_gt_activeElementParentData.props.elements,
         index: _index
       });
+      commit('SET_ACTIVEELEMENTPUID', vx_gt_activeElementParentData.puid);
+      commit('SET_ACTIVEELEMENTUID', vx_gt_activeElementParentData.uid);
       dispatch('vx_ac_AddHistory');
     },
     /* 添加历史记录 */
