@@ -55,7 +55,7 @@ export default {
           this.vx_ac_AddElement(element.componentName);
           break;
         case 'Complex':
-          this.vx_ac_AddComplexElement(element.jsonString);
+          this.vx_ac_AddComplexElement(element.config);
           break;
         default:
           break;
