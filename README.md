@@ -30,11 +30,11 @@ Projet 是一个`在线生成 H5 页面并提供页面管理和页面编辑的�
         |-- content                           --------界面下方
             |-- center                        --------可视区
                 |-- index.vue
-            |-- left                          --------左侧面板
+            |-- left                          --------左侧面板
                 |-- components
-                    |-- component-libs.vue    --------组件面板
-                    |-- layer-management.vue  --------图层管理面板
-                    |-- templates-libs.vue    --------模版面板
+                    |-- component-libs.vue    --------可选组件面板
+                    |-- layer-management.vue  --------图层管理面板
+                    |-- templates-libs.vue    --------模版管理面板
                 |-- index.vue
             |-- right                         --------右侧面板
                 |-- css-editor                --------样式编辑
