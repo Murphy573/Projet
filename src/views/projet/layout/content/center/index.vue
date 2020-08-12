@@ -11,9 +11,7 @@
 
 <script>
 import MyElScrollbar from '@/components/my-el-scrollbar';
-import { createNamespacedHelpers } from 'vuex';
-
-const { mapGetters, mapActions } = createNamespacedHelpers('Projet');
+import { projetMapActions, projetMapGetters } from '../../../store/namespaced';
 
 export default {
   name: 'LayoutContentCenter',
@@ -21,11 +19,11 @@ export default {
   components: { MyElScrollbar },
 
   computed: {
-    ...mapGetters(['vx_gt_pageData'])
+    ...projetMapGetters(['vx_gt_pageData'])
   },
 
   methods: {
-    ...mapActions(['vx_ac_SetActiveElementUid']),
+    ...projetMapActions(['vx_ac_SetActiveElementUid']),
     handlePageClick () {
       this.vx_ac_SetActiveElementUid(this.vx_gt_pageData.uid);
     }

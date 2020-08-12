@@ -2,16 +2,13 @@
   <div class="projet">
     <ProjetLayoutHeader />
     <ProjetLayoutContent />
-    {{vx_gt_pageData}}
   </div>
 </template>
 
 <script>
 import ProjetLayoutHeader from './header/index';
 import ProjetLayoutContent from './content/index';
-import { createNamespacedHelpers } from 'vuex';
-
-const { mapActions, mapGetters } = createNamespacedHelpers('Projet');
+import { projetMapActions, projetMapGetters } from '../store/namespaced';
 
 export default {
   name: 'Projet',
@@ -22,7 +19,7 @@ export default {
   },
 
   computed: {
-    ...mapGetters(['vx_gt_pageData'])
+    ...projetMapGetters(['vx_gt_pageData'])
   },
 
   created () {
@@ -30,7 +27,7 @@ export default {
   },
 
   methods: {
-    ...mapActions(['vx_ac_AddPage']),
+    ...projetMapActions(['vx_ac_AddPage']),
     pageInit () {
       this.vx_ac_AddPage();
     }

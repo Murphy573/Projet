@@ -34,10 +34,8 @@ import AttrCheckbox from './components/AttrCheckbox';
 import AttrDatetime from './components/AttrDatetime';
 /* 属性组件 end */
 
-import { getComponentPropsEditors } from '@/views/projet/utils/element';
-import { createNamespacedHelpers } from 'vuex';
-
-const { mapGetters } = createNamespacedHelpers('Projet');
+import { getComponentPropsEditors } from '../../../../utils/element';
+import { projetMapGetters } from '../../../../store/namespaced';
 
 export default {
   name: 'PropsEditor',
@@ -57,7 +55,7 @@ export default {
   },
 
   computed: {
-    ...mapGetters(['vx_gt_activeElementData']),
+    ...projetMapGetters(['vx_gt_activeElementData']),
     cmpt_activeElementProps () {
       return this.vx_gt_activeElementData.props;
     },

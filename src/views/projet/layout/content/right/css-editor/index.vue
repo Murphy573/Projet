@@ -235,10 +235,7 @@ import {
 import AttrColorpicker from '../props-editor/components/AttrColorpicker';
 import AttrImageUpload from '../props-editor/components/AttrImageUpload';
 import MyElScrollbar from '@/components/my-el-scrollbar';
-
-import { createNamespacedHelpers } from 'vuex';
-
-const { mapGetters } = createNamespacedHelpers('Projet');
+import { projetMapGetters } from '../../../../store/namespaced';
 
 export default {
   name: 'CssEditor',
@@ -257,7 +254,7 @@ export default {
   },
 
   computed: {
-    ...mapGetters(['vx_gt_activeElementData', 'vx_gt_activeRootElement']),
+    ...projetMapGetters(['vx_gt_activeElementData', 'vx_gt_activeRootElement']),
     cmpt_activeElementCss () {
       return this.vx_gt_activeElementData.css;
     }

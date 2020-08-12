@@ -34,15 +34,13 @@
 </template>
 
 <script>
-import { createNamespacedHelpers } from 'vuex';
-
-const { mapActions, mapGetters } = createNamespacedHelpers('Projet');
+import { projetMapActions, projetMapGetters } from '../../../../store/namespaced';
 
 export default {
   name: 'ShortcutMenu',
 
   computed: {
-    ...mapGetters([
+    ...projetMapGetters([
       'vx_gt_canCopy',
       'vx_gt_canPaste',
       'vx_gt_canMoveForward',
@@ -52,7 +50,7 @@ export default {
   },
 
   methods: {
-    ...mapActions([
+    ...projetMapActions([
       'vx_ac_CopyElement',
       'vx_ac_PasteElement',
       'vx_ac_MoveForwardAndBackward',

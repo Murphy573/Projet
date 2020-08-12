@@ -12,8 +12,8 @@ import {
   PROJET_ATTR_STRING,
   PROJET_ATTR_IMAGEUPLOAD,
   PROJET_ATTR_SELECT
-} from '@/views/projet/model/attr.editor';
-import createComponent from '@/views/projet/model/create-component';
+} from '../../../model/attr.editor';
+import createComponent from '../../../model/create-component';
 
 export default createComponent({
   name: 'ProjetImage',

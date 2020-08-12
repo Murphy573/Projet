@@ -26,8 +26,8 @@ import {
   PROJET_ATTR_RADIO,
   PROJET_ATTR_CHECKBOX,
   PROJET_ATTR_DATETIME
-} from '@/views/projet/model/attr.editor';
-import createComponent from '@/views/projet/model/create-component';
+} from '../../../model/attr.editor';
+import createComponent from '../../../model/create-component';
 
 export default createComponent({
   name: 'ProjetSample',

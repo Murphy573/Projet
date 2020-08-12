@@ -20,9 +20,7 @@
 
 <script>
 import MyElScrollbar from '@/components/my-el-scrollbar';
-import { createNamespacedHelpers } from 'vuex';
-
-const { mapGetters, mapActions } = createNamespacedHelpers('Projet');
+import { projetMapActions, projetMapGetters } from '../../../../store/namespaced';
 
 export default {
   name: 'LayersManagement',
@@ -39,7 +37,7 @@ export default {
   },
 
   computed: {
-    ...mapGetters(['vx_gt_activeElementUid', 'vx_gt_genElementsTree']),
+    ...projetMapGetters(['vx_gt_activeElementUid', 'vx_gt_genElementsTree']),
     cmpt_defaultExpandKeys () {
       return [this.vx_gt_activeElementUid];
     }
@@ -54,7 +52,7 @@ export default {
   },
 
   methods: {
-    ...mapActions(['vx_ac_SetActiveElementUid']),
+    ...projetMapActions(['vx_ac_SetActiveElementUid']),
     handleNodeClick (data) {
       this.vx_ac_SetActiveElementUid(data.uid);
     }

@@ -30,11 +30,9 @@
 </template>
 
 <script>
-import Components from '@/views/projet/resource/register';
+import Components from '../../../../resource/register';
 import MyElScrollbar from '@/components/my-el-scrollbar';
-import { createNamespacedHelpers } from 'vuex';
-
-const { mapActions } = createNamespacedHelpers('Projet');
+import { projetMapActions } from '../../../../store/namespaced';
 
 export default {
   name: 'ComponentLibs',
@@ -48,7 +46,7 @@ export default {
   },
 
   methods: {
-    ...mapActions(['vx_ac_AddElement', 'vx_ac_AddComplexElement']),
+    ...projetMapActions(['vx_ac_AddElement', 'vx_ac_AddComplexElement']),
     handleClick (componentType, element) {
       switch (componentType) {
         case 'Basic':

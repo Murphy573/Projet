@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import ZIndex from '@/views/projet/utils/z-index';
+import ZIndex from '../../../utils/z-index';
 
 export default {
   name: 'ProjetEditShape',

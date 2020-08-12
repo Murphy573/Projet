@@ -19,13 +19,10 @@ import {
   PROJET_ATTR_STRING,
   PROJET_ATTR_SELECT,
   PROJET_ATTR_RADIO
-  // PROJET_ATTR_SWITCH
-} from '@/views/projet/model/attr.editor';
-import createComponent from '@/views/projet/model/create-component';
-import { formatCommonCss } from '@/views/projet/model/css.js';
-import { createNamespacedHelpers } from 'vuex';
-
-const { mapGetters, mapActions } = createNamespacedHelpers('Projet');
+} from '../../../model/attr.editor';
+import createComponent from '../../../model/create-component';
+import { formatCommonCss } from '../../../model/css.js';
+import { projetMapActions, projetMapGetters } from '../../../store/namespaced';
 
 export default createComponent({
   name: 'ProjetFlexContainer',
@@ -127,30 +124,6 @@ export default createComponent({
         ]
       }
     }
-    // overflowx: {
-    //   type: String,
-    //   default: 'hidden',
-    //   editor: {
-    //     label: '横向滚动',
-    //     type: PROJET_ATTR_SWITCH,
-    //     options: [
-    //       {
-    //         label: '',
-    //         // 激活时的值
-    //         value: 'auto',
-    //         // 激活时的组件背景色
-    //         color: '#13ce66'
-    //       },
-    //       {
-    //         label: '',
-    //         // 未激活时的值
-    //         value: 'hidden',
-    //         // 未激活时的组件背景色
-    //         color: '#ff4949'
-    //       }
-    //     ]
-    //   }
-    // }
   },
 
   data () {
@@ -160,7 +133,7 @@ export default createComponent({
   },
 
   computed: {
-    ...mapGetters(['vx_gt_activeElementUid']),
+    ...projetMapGetters(['vx_gt_activeElementUid']),
     cmpt_style () {
       return Object.assign(
         {},
@@ -171,13 +144,12 @@ export default createComponent({
           flexWrap: this.wrap,
           justifyContent: this.justify,
           alignItems: this.align
-          // overflowX: this.overflowx
         });
     }
   },
 
   methods: {
-    ...mapActions(['vx_ac_SetActiveElementUid']),
+    ...projetMapActions(['vx_ac_SetActiveElementUid']),
     handleElementClick (uid) {
       this.vx_ac_SetActiveElementUid(uid);
     }

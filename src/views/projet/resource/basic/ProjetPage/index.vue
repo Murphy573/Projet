@@ -15,12 +15,10 @@
 
 <script>
 /* 根页面组件 */
-import { formatCommonCss } from '@/views/projet/model/css.js';
-import { PROJET_ATTR_STRING } from '@/views/projet/model/attr.editor';
-import createComponent from '@/views/projet/model/create-component';
-import { createNamespacedHelpers } from 'vuex';
-
-const { mapGetters, mapActions } = createNamespacedHelpers('Projet');
+import { formatCommonCss } from '../../../model/css.js';
+import { PROJET_ATTR_STRING } from '../../../model/attr.editor';
+import createComponent from '../../../model/create-component';
+import { projetMapActions, projetMapGetters } from '../../../store/namespaced';
 
 export default createComponent({
   name: 'ProjetPage',
@@ -43,11 +41,11 @@ export default createComponent({
   },
 
   computed: {
-    ...mapGetters(['vx_gt_pageData', 'vx_gt_activeElementUid', 'vx_gt_activeElementPuid'])
+    ...projetMapGetters(['vx_gt_pageData', 'vx_gt_activeElementUid', 'vx_gt_activeElementPuid'])
   },
 
   methods: {
-    ...mapActions(['vx_ac_SetActiveElementUid']),
+    ...projetMapActions(['vx_ac_SetActiveElementUid']),
     handleElementClick (uid) {
       this.vx_ac_SetActiveElementUid(uid);
     }

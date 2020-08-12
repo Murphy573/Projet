@@ -22,17 +22,15 @@
 
 <script>
 /* 轮播容器 */
-import { formatCommonCss } from '@/views/projet/model/css.js';
+import { formatCommonCss } from '../../../model/css.js';
 import {
   PROJET_ATTR_STRING,
   PROJET_ATTR_NUMBER,
   PROJET_ATTR_SWITCH,
   PROJET_ATTR_COLORPICKER
-} from '@/views/projet/model/attr.editor';
-import createComponent from '@/views/projet/model/create-component';
-import { createNamespacedHelpers } from 'vuex';
-
-const { mapGetters, mapActions } = createNamespacedHelpers('Projet');
+} from '../../../model/attr.editor';
+import createComponent from '../../../model/create-component';
+import { projetMapActions, projetMapGetters } from '../../../store/namespaced';
 
 export default createComponent({
   name: 'ProjetSwiper',
@@ -91,7 +89,7 @@ export default createComponent({
   },
 
   computed: {
-    ...mapGetters([
+    ...projetMapGetters([
       'vx_gt_activeElementPuid',
       'vx_gt_activeElementUid'
     ]),
@@ -134,7 +132,7 @@ export default createComponent({
   },
 
   methods: {
-    ...mapActions(['vx_ac_SetActiveElementUid']),
+    ...projetMapActions(['vx_ac_SetActiveElementUid']),
     handleElementClick (uid) {
       this.vx_ac_SetActiveElementUid(uid);
     }

@@ -29,7 +29,8 @@
           <i class="iconfont iconyulan" />
           <p>预览</p>
         </li> -->
-        <li class="bar-item">
+        <li class="bar-item"
+          @click="save">
           <i class="iconfont iconbaocun" />
           <p>保存</p>
         </li>
@@ -45,19 +46,17 @@
 </template>
 
 <script>
-import { createNamespacedHelpers } from 'vuex';
-
-const { mapActions, mapGetters } = createNamespacedHelpers('Projet');
+import { projetMapActions, projetMapGetters } from '../../store/namespaced';
 
 export default {
   name: 'ProjetLayoutHeader',
 
   computed: {
-    ...mapGetters(['vx_gt_canUndo', 'vx_gt_canRedo', 'vx_gt_isDevMode'])
+    ...projetMapGetters(['vx_gt_canUndo', 'vx_gt_canRedo', 'vx_gt_isDevMode', 'vx_gt_pageData'])
   },
 
   methods: {
-    ...mapActions(['vx_ac_UndoAndRedo', 'vx_ac_SetDevMode']),
+    ...projetMapActions(['vx_ac_UndoAndRedo', 'vx_ac_SetDevMode']),
     undo () {
       if (!this.vx_gt_canUndo) return;
       this.vx_ac_UndoAndRedo('undo');
@@ -68,6 +67,12 @@ export default {
     },
     setMode (flag = true) {
       this.vx_ac_SetDevMode(flag);
+    },
+    save () {
+      /* eslint-disable */
+      console.log('%c%s', 'color: red; font-size: 12px;', '==========start==========');
+      console.log('%c%s', 'color: blue; font-size: 12px;', JSON.stringify(this.vx_gt_pageData));
+      console.log('%c%s', 'color: red; font-size: 12px;', '==========end==========');
     }
   }
 };

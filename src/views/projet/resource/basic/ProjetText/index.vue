@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import { PROJET_ATTR_STRING } from '@/views/projet/model/attr.editor';
-import createComponent from '@/views/projet/model/create-component';
+import { PROJET_ATTR_STRING } from '../../../model/attr.editor';
+import createComponent from '../../../model/create-component';
 
 export default createComponent({
   name: 'ProjetText',
