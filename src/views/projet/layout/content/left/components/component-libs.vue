@@ -56,6 +56,7 @@ export default {
           this.vx_ac_AddComplexElement(element.config);
           break;
         default:
+          this.$message.error(`不支持的组件类型：${componentType}`);
           break;
       }
     }
