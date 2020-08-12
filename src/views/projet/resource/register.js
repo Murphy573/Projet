@@ -2,6 +2,8 @@ import Vue from 'vue';
 const req = context => context.keys().map(context);
 // 基础组件
 const BaiscComponents = req(require.context('./basic', true, /\.vue$/));
+// 复合组件
+const ComplexComponents = req(require.context('./complex', true, /\.json$/));
 
 let BasicList = [];
 let RegisterComponentObject = {};
@@ -19,7 +21,7 @@ BaiscComponents.forEach(temp => {
   if (dispayLabel && displayIconfont) {
     BasicList.push({
       componentName: name,
-      type: 'Baisc',
+
       label: dispayLabel,
       icon: displayIconfont
     });
@@ -28,6 +30,19 @@ BaiscComponents.forEach(temp => {
   RegisterComponentObject[name] = instance;
 });
 
-export default [{ label: '基础组件', list: BasicList }];
+let ComplexList = [];
+ComplexComponents.forEach(temp => {
+  let { label, icon, json } = temp;
+  ComplexList.push({
+    jsonString: JSON.stringify(json),
+    label: label,
+    icon: icon
+  });
+});
+
+export default [
+  { label: '基础组件', type: 'Basic', list: BasicList },
+  { label: '复合组件', type: 'Complex', list: ComplexList }
+];
 
 export { RegisterComponentObject };

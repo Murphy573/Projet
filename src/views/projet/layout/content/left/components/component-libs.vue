@@ -13,7 +13,7 @@
             <li v-for="(element,i) in item.list"
               :key="i"
               class="lib-item"
-              @click="handleClick(element)">
+              @click="handleClick(item.type, element)">
               <p class="lib-item-icon">
                 <i class="icon iconfont"
                   :class="element.icon"></i>
@@ -48,9 +48,18 @@ export default {
   },
 
   methods: {
-    ...mapActions(['vx_ac_AddElement']),
-    handleClick (element) {
-      this.vx_ac_AddElement(element.componentName);
+    ...mapActions(['vx_ac_AddElement', 'vx_ac_AddComplexElement']),
+    handleClick (componentType, element) {
+      switch (componentType) {
+        case 'Basic':
+          this.vx_ac_AddElement(element.componentName);
+          break;
+        case 'Complex':
+          this.vx_ac_AddComplexElement(element.jsonString);
+          break;
+        default:
+          break;
+      }
     }
   }
 };
