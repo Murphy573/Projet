@@ -3,31 +3,31 @@
     <li class="menu-item"
       :class="{disabled: !vx_gt_canCopy}"
       @click="copy">
-      <i class="iconfont iconundo" />
+      <i class="iconfont iconcopy" />
       <p>复制</p>
     </li>
     <li class="menu-item"
       :class="{disabled: !vx_gt_canPaste}"
       @click="paste">
-      <i class="iconfont iconundo" />
+      <i class="iconfont iconniantie" />
       <p>粘贴</p>
     </li>
     <li class="menu-item"
       :class="{disabled:!vx_gt_canMoveForward}"
       @click="forward">
-      <i class="iconfont iconundo" />
+      <i class="iconfont iconshang" />
       <p>前移</p>
     </li>
     <li class="menu-item"
       :class="{disabled:!vx_gt_canMoveBackward}"
       @click="backward">
-      <i class="iconfont iconundo" />
+      <i class="iconfont iconxia" />
       <p>后移</p>
     </li>
     <li class="menu-item"
       :class="{disabled:!vx_gt_canDelElement}"
       @click="del">
-      <i class="iconfont iconundo" />
+      <i class="iconfont iconshanchu" />
       <p>删除</p>
     </li>
   </ul>

@@ -122,6 +122,7 @@ export default {
           opacity: 0.2;
           cursor: not-allowed;
           &:hover {
+            color: initial;
             background: none;
           }
         }
