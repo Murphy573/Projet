@@ -16,14 +16,13 @@
               :class="item.iconfont"></i>
           </el-tooltip>
         </template>
-        <template #default>
-
-        </template>
       </el-tab-pane>
     </el-tabs>
 
     <div class="right">
-      <component :is="activeSideBar"></component>
+      <keep-alive>
+        <component :is="activeSideBar"></component>
+      </keep-alive>
     </div>
   </div>
 </template>
