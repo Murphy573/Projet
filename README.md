@@ -5,7 +5,7 @@
 Projet 是一个`在线生成 H5 页面并提供页面管理和页面编辑的平台`，用于快速制作 H5 页面区块。用户无需掌握复杂的编程技术，通过简单配置即可制作精美的页面，可用于营销场景下的页面区块制作。同时，也为开发者提供了`编程接入能力`
 
 _图为编辑器工作区界面_
-![](./src/assets/md-images/projet-main.jpg)
+![](https://github.com/Murphy573/Projet/tree/master/src/assets/md-images/projet-main.jpg)
 
 ### 支持功能
 
