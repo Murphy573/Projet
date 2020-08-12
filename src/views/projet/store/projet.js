@@ -308,7 +308,7 @@ export default {
         commit('SET_CURHISTORYINDEX', History.index);
       }
     },
-    /* 添加历史记录 */
+    /* 设置模式：开发or预览 */
     vx_ac_SetDevMode ({ commit }, mode = true) {
       commit('SET_DEVMODE', !!mode);
     }
