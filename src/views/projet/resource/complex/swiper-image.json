@@ -1,7 +1,7 @@
 {
   "label": "轮播图",
   "icon": "iconwenben",
-  "json": {
+  "jsonString": {
     "props": {
       "title": "轮播容器",
       "autoplay": false,

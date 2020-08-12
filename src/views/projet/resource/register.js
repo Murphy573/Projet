@@ -33,9 +33,9 @@ BaiscComponents.forEach(temp => {
 /* 复合组件 */
 let ComplexList = [];
 ComplexComponents.forEach(temp => {
-  let { label, icon, json } = temp;
+  let { label, icon, jsonString } = temp;
   ComplexList.push({
-    jsonString: JSON.stringify(json),
+    jsonString: JSON.stringify(jsonString),
     label: label,
     icon: icon
   });

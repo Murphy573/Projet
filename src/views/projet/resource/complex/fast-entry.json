@@ -1,7 +1,7 @@
 {
   "label": "快速入口",
   "icon": "iconwenben",
-  "json": {
+  "jsonString": {
     "props": {
       "title": "快速入口",
       "direction": "row",
