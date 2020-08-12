@@ -1,14 +1,14 @@
 /* 编辑器核心 */
-import { InitNewPage } from '@/views/projet/model/page';
-import { InitBasicElement, InitComplexElement } from '@/views/projet/model/element';
+import { InitNewPage } from '../model/page';
+import { InitBasicElement, InitComplexElement } from '../model/element';
 import {
   findActiveElement,
   genElementTree,
   findActiveElementInParentIndex
-} from '@/views/projet/utils/element';
-import { showMessage } from '@/views/projet/utils/common';
+} from '../utils/element';
+import { showMessage } from '../utils/common';
 import { isArray } from '@/utils/common';
-import History from '@/views/projet/utils/history';
+import History from '../utils/history';
 
 export default {
   namespaced: true,
