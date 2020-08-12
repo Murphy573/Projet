@@ -68,9 +68,12 @@ Projet 是一个`在线生成 H5 页面并提供页面管理和页面编辑的�
 
 ### 上手使用
 
-```javascript
+```bash
+# 克隆代码
 git clone https://github.com/Murphy573/Projet.git
+# npm安装依赖
 npm i
+# 启动工程
 npm run start
 ```
 
