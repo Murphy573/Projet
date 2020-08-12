@@ -1,4 +1,4 @@
-# vue-admin-template
+# 🏠Projet
 
 ## Project setup
 
@@ -23,7 +23,3 @@ npm run build
 ```
 npm run lint
 ```
-
-### 使用
-
-请查看 [murphy-cli](https://github.com/Murphy573/murphy-cli).

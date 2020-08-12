@@ -15,7 +15,6 @@ import router from './router/index';
 import i18n from './i18n';
 // 路由拦截
 import './router/router-event';
-
 // 引入vant使用的组件
 import './libs/vant';
 // icon
@@ -33,5 +32,5 @@ new Vue({
   router,
   store,
   i18n,
-  render: h => h(App)
+  render: (h) => h(App)
 }).$mount('#app');

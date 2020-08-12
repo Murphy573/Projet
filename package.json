@@ -1,9 +1,13 @@
 {
-  "name": "vue-admin-template",
-  "version": "0.1.0",
-  "description": "vue管理端模板--带tag",
+  "name": "projet",
+  "version": "0.0.1",
+  "description": "动态配置页面",
   "author": "lipfd@yonyou.com",
   "private": true,
+  "keywords": [
+    "vue",
+    "dynamic"
+  ],
   "scripts": {
     "start": "vue-cli-service serve",
     "lint": "vue-cli-service lint --max-warnings 0",
