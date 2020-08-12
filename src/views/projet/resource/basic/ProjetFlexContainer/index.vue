@@ -21,7 +21,6 @@ import {
   PROJET_ATTR_RADIO
   // PROJET_ATTR_SWITCH
 } from '@/views/projet/model/attr.editor';
-import ProjetEditShape from '../ProjetEditShape';
 import createComponent from '@/views/projet/model/create-component';
 import { formatCommonCss } from '@/views/projet/model/css.js';
 import { createNamespacedHelpers } from 'vuex';
@@ -30,8 +29,10 @@ const { mapGetters, mapActions } = createNamespacedHelpers('Projet');
 
 export default createComponent({
   name: 'ProjetFlexContainer',
-
-  components: { ProjetEditShape },
+  // 左侧面板展示名称
+  dispayLabel: '弹性容器',
+  // 左侧面板展示icon
+  displayIconfont: 'iconwenben',
 
   props: {
     title: {

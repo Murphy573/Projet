@@ -114,16 +114,10 @@
                 controls-position="right"
                 class="full-width" />
             </el-form-item>
-            <el-form-item label="左外边距">
+            <el-form-item label="左外边距"
+              class="el-form-item-bottom-0">
               <el-input-number v-model="cmpt_activeElementCss.marginLeft"
                 controls-position="right"
-                class="full-width" />
-            </el-form-item>
-            <el-form-item label="高度"
-              class="el-form-item-bottom-0">
-              <el-input-number v-model="cmpt_activeElementCss.height"
-                controls-position="right"
-                :min="0"
                 class="full-width" />
             </el-form-item>
           </el-form>

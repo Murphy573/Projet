@@ -1,7 +1,7 @@
 <template>
-  <div class="main-center"
+  <div class="layout-content-center"
     @click="handlePageClick">
-    <div class="main-editor">
+    <div class="layout-content-editor">
       <MyElScrollbar>
         <ProjetPage />
       </MyElScrollbar>
@@ -11,15 +11,14 @@
 
 <script>
 import MyElScrollbar from '@/components/my-el-scrollbar';
-import ProjetPage from '@/views/projet/resource/ProjetPage';
 import { createNamespacedHelpers } from 'vuex';
 
 const { mapGetters, mapActions } = createNamespacedHelpers('Projet');
 
 export default {
-  name: 'MainCenter',
+  name: 'LayoutContentCenter',
 
-  components: { ProjetPage, MyElScrollbar },
+  components: { MyElScrollbar },
 
   computed: {
     ...mapGetters(['vx_gt_pageData'])
@@ -35,12 +34,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.main-center {
+.layout-content-center {
   position: relative;
   flex: 1;
   background: #eee;
 
-  .main-editor {
+  .layout-content-editor {
     width: 375px;
     height: 644px;
     box-shadow: 0 3px 10px #dcdcdc;

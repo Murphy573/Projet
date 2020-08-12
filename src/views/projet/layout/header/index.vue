@@ -1,5 +1,5 @@
 <template>
-  <div class="projet-header">
+  <div class="projet-layout-header">
     <section class="left">
       Projet
     </section>
@@ -50,7 +50,7 @@ import { createNamespacedHelpers } from 'vuex';
 const { mapActions, mapGetters } = createNamespacedHelpers('Projet');
 
 export default {
-  name: 'ProjetHeader',
+  name: 'ProjetLayoutHeader',
 
   computed: {
     ...mapGetters(['vx_gt_canUndo', 'vx_gt_canRedo', 'vx_gt_isDevMode'])
@@ -74,7 +74,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.projet-header {
+.projet-layout-header {
   padding: 0 10px;
   height: 48px;
   box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);

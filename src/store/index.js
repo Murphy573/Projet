@@ -4,7 +4,7 @@ import app from './modules/app';
 import menu from './modules/menu';
 import tagsView from './modules/tagsView';
 import user from './modules/user';
-import Projet from './modules/projet';
+import Projet from '@/views/projet/store/projet';
 
 Vue.use(Vuex);
 

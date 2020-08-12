@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import Components from '../../../model/components';
+import Components from '@/views/projet/resource/register';
 import MyElScrollbar from '@/components/my-el-scrollbar';
 import { createNamespacedHelpers } from 'vuex';
 

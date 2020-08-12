@@ -6,11 +6,15 @@
 </template>
 
 <script>
-import { PROJET_ATTR_STRING } from '../../model/attr.editor';
-import createComponent from '../../model/create-component';
+import { PROJET_ATTR_STRING } from '@/views/projet/model/attr.editor';
+import createComponent from '@/views/projet/model/create-component';
 
 export default createComponent({
   name: 'ProjetText',
+  // 左侧面板展示名称
+  dispayLabel: '文本',
+  // 左侧面板展示icon
+  displayIconfont: 'iconwenben',
 
   props: {
     title: {

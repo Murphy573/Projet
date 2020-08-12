@@ -1,5 +1,5 @@
 <template>
-  <div class="main-left">
+  <div class="layout-content-left">
     <el-tabs class="left"
       tab-position="left"
       v-model="activeSideBar"
@@ -34,7 +34,7 @@ import LayersManagement from './components/layers-management';
 import TemplatesLibs from './components/templates-libs';
 
 export default {
-  name: 'MainLeft',
+  name: 'LayoutContentLeft',
 
   components: { ComponentsLibs, LayersManagement, TemplatesLibs },
 
@@ -64,7 +64,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.main-left {
+.layout-content-left {
   display: flex;
   flex: none;
   width: 280px;

@@ -1,5 +1,5 @@
 <template>
-  <div class="projet-main">
+  <div class="projet-layout-content">
     <MainLeft />
     <MainCenter />
     <MainRight />
@@ -12,32 +12,14 @@ import MainCenter from './center';
 import MainRight from './right';
 
 export default {
-  name: 'ProjetMain',
+  name: 'ProjetLayoutContent',
 
-  mixins: [],
-
-  components: { MainLeft, MainCenter, MainRight },
-
-  props: {},
-
-  data () {
-    return {
-
-    };
-  },
-
-  computed: {},
-
-  watch: {},
-
-  created () { },
-
-  methods: {}
+  components: { MainLeft, MainCenter, MainRight }
 };
 </script>
 
 <style lang="scss" scoped>
-.projet-main {
+.projet-layout-content {
   display: flex;
   height: 700px;
 }

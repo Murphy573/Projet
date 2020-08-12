@@ -22,7 +22,6 @@
 
 <script>
 /* 轮播容器 */
-import ProjetEditShape from '../ProjetEditShape';
 import { formatCommonCss } from '@/views/projet/model/css.js';
 import {
   PROJET_ATTR_STRING,
@@ -37,10 +36,10 @@ const { mapGetters, mapActions } = createNamespacedHelpers('Projet');
 
 export default createComponent({
   name: 'ProjetSwiper',
-
-  mixins: [],
-
-  components: { ProjetEditShape },
+  // 左侧面板展示名称
+  dispayLabel: '轮播容器',
+  // 左侧面板展示icon
+  displayIconfont: 'iconwenben',
 
   props: {
     title: {

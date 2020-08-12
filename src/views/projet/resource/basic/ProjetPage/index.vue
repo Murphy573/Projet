@@ -15,7 +15,6 @@
 
 <script>
 /* 根页面组件 */
-import ProjetEditShape from '../ProjetEditShape';
 import { formatCommonCss } from '@/views/projet/model/css.js';
 import { PROJET_ATTR_STRING } from '@/views/projet/model/attr.editor';
 import createComponent from '@/views/projet/model/create-component';
@@ -25,10 +24,6 @@ const { mapGetters, mapActions } = createNamespacedHelpers('Projet');
 
 export default createComponent({
   name: 'ProjetPage',
-
-  components: {
-    ProjetEditShape
-  },
 
   props: {
     title: {

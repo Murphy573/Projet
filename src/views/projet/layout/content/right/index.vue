@@ -1,5 +1,5 @@
 <template>
-  <div class="main-right">
+  <div class="layout-content-right">
     <section class="left">
       <ShortcutMenu />
     </section>
@@ -26,7 +26,7 @@ import PropsEditor from './props-editor/index';
 import CssEditor from './css-editor/index';
 
 export default {
-  name: 'MainRight',
+  name: 'LayoutContentRight',
 
   components: { ShortcutMenu, PropsEditor, CssEditor },
 
@@ -39,7 +39,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.main-right {
+.layout-content-right {
   display: flex;
   width: 415px;
   flex: none;

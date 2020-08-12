@@ -12,11 +12,15 @@ import {
   PROJET_ATTR_STRING,
   PROJET_ATTR_IMAGEUPLOAD,
   PROJET_ATTR_SELECT
-} from '../../model/attr.editor';
-import createComponent from '../../model/create-component';
+} from '@/views/projet/model/attr.editor';
+import createComponent from '@/views/projet/model/create-component';
 
 export default createComponent({
   name: 'ProjetImage',
+  // 左侧面板展示名称
+  dispayLabel: '图片',
+  // 左侧面板展示icon
+  displayIconfont: 'icontupian',
 
   props: {
     title: {
@@ -29,8 +33,7 @@ export default createComponent({
     },
     src: {
       type: String,
-      default: 'https://m.360buyimg.com/mobilecms/s700x280_jfs/t1/123624/24/2195/99979/5ec3a165E12b276e2/2e5b8a2606fbabfe.jpg!q70.jpg.dpg',
-      // default: 'https://dummyimage.com/800x300.jpg',
+      default: 'https://dummyimage.com/800x300.jpg',
       editor: {
         label: '图片链接',
         type: PROJET_ATTR_IMAGEUPLOAD

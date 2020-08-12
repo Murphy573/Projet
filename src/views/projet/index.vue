@@ -1,54 +1,15 @@
 <template>
   <div class="projet">
-    <ProjetHeader />
-    <ProjetMain />
-    {{vx_gt_pageData}}
+    <Layout />
   </div>
 </template>
 
 <script>
-import ProjetHeader from './header/index';
-import ProjetMain from './main/index';
-import { createNamespacedHelpers } from 'vuex';
-
-const { mapActions, mapGetters } = createNamespacedHelpers('Projet');
+import Layout from './layout/index';
 
 export default {
   name: 'Projet',
 
-  mixins: [],
-
-  components: {
-    ProjetHeader,
-    ProjetMain
-  },
-
-  props: {},
-
-  data () {
-    return {
-
-    };
-  },
-
-  computed: {
-    ...mapGetters(['vx_gt_pageData'])
-  },
-
-  watch: {},
-
-  created () {
-    this.pageInit();
-  },
-
-  methods: {
-    ...mapActions(['vx_ac_AddPage']),
-    pageInit () {
-      this.vx_ac_AddPage();
-    }
-  }
+  components: { Layout }
 };
 </script>
-
-<style lang="scss" scoped>
-</style>

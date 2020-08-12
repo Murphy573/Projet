@@ -1,5 +1,5 @@
 import { isPlainObj, isArray } from '@/utils/common';
-import { RegisterComponentObject } from '../resource';
+import { RegisterComponentObject } from '@/views/projet/resource/register';
 
 /**
  * 找出唯一id指定的元素
