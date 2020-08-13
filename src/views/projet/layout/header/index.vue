@@ -70,9 +70,10 @@ export default {
     },
     save () {
       /* eslint-disable */
-      console.log('%c%s', 'color: red; font-size: 12px;', '==========start==========');
+      console.log('%c%s', 'color: red; font-size: 12px;', '==========配置信息start==========');
       console.log('%c%s', 'color: blue; font-size: 12px;', JSON.stringify(this.vx_gt_pageData));
-      console.log('%c%s', 'color: red; font-size: 12px;', '==========end==========');
+      console.log('%c%s', 'color: red; font-size: 12px;', '==========配置信息end==========');
+      this.$message.success(`页面配置信息已打印到控制台，请使用快捷键 'ctrl+shift+I' 或 'cmd+option+I' 打开控制台查看`);
     }
   }
 };
