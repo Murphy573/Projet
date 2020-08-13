@@ -1,8 +1,6 @@
 import Vue from 'vue';
-import {
-  Swipe,
-  SwipeItem
-} from 'vant';
+import { Swipe, SwipeItem, CountDown } from 'vant';
 
 Vue.use(Swipe)
-  .use(SwipeItem);
+  .use(SwipeItem)
+  .use(CountDown);
