@@ -108,6 +108,7 @@ export function getComponentPropsAndCss (componentName) {
  */
 export function getComponentPropsEditors (componentName) {
   let elComponentData;
+  // 找到注册组件实例
   for (let key in RegisterComponentObject) {
     if (key.toLowerCase() === componentName.toLowerCase()) {
       elComponentData = RegisterComponentObject[key];
@@ -126,6 +127,7 @@ export function getComponentPropsEditors (componentName) {
     // editor不存在或者不为对象，跳过
     if (!editor || !isPlainObj(editor)) continue;
 
+    // 获取到每个可编辑属性，添加到列表
     let { label, type, options } = editor;
     editorList.push({
       propKey: key,

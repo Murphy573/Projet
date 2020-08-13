@@ -1,4 +1,5 @@
 <template>
+  <!-- 组件展示代码 -->
   <div class="projet-sample"
     :style="cmpt_style">
     <ul>
