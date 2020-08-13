@@ -182,8 +182,8 @@ export default {
 
       dispatch('vx_ac_AddHistory');
     },
-    /* 添加元素组件 */
-    vx_ac_AddElement ({ commit, getters, dispatch }, componentName = null) {
+    /* 添加基础元素 */
+    vx_ac_AddBasicElement ({ commit, getters, dispatch }, componentName = null) {
       if (!componentName) return;
       let { vx_gt_activeElementData, vx_gt_activeElementUid } = getters;
       if (!isArray(vx_gt_activeElementData.props.elements)) {

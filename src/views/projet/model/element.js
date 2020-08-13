@@ -9,12 +9,17 @@ import { getComponentPropsAndCss } from '../utils/element';
  * @param {String} componentName 组件名称
  */
 export function InitBasicElement (componentName) {
+  // 拷贝组件的prop和默认css
   let _elementData = deepClone(getComponentPropsAndCss(componentName));
+  // 设置使用组件名称
   _elementData.componentName = componentName;
+  // 生成uid
   _elementData.uid = generateUniqueIdByCustom(12);
   // 用组件定义的defaultCss值覆盖默认样式
   _elementData.css = Object.assign({}, copyCommonCss(), _elementData.defaultCss);
+  // 删除默认样式
   delete _elementData.defaultCss;
+
   return _elementData;
 }
 
@@ -34,6 +39,11 @@ export function InitComplexElement (componentJson, puid) {
       _elementsData = elementsData;
     }
 
+    /**
+     * 递归创建组件数据
+     * @param {Array} data 组件数据
+     * @param {String} puid 父uid
+     */
     let _map = (data, puid) => {
       return data.map(ele => {
         ele.uid = generateUniqueIdByCustom(12);

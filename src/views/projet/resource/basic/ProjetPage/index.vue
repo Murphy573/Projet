@@ -4,8 +4,8 @@
     <ProjetEditShape v-for="item in vx_gt_pageData.props.elements"
       :key="item.uuid"
       :active="item.uid === vx_gt_activeElementUid"
-      @element-click="handleElementClick(item.uid)"
-      :style="formatCommonCss(item.css)">
+      :style="formatCommonCss(item.css)"
+      @element-click="handleElementClick(item.uid)">
       <component :is="item.componentName"
         :uid="item.uid"
         v-bind="item.props" />

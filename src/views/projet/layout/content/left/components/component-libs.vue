@@ -46,11 +46,16 @@ export default {
   },
 
   methods: {
-    ...projetMapActions(['vx_ac_AddElement', 'vx_ac_AddComplexElement']),
+    ...projetMapActions(['vx_ac_AddBasicElement', 'vx_ac_AddComplexElement']),
+    /**
+     * 创建组件
+     * @param {String} componentType 组件类型：基础or复合
+     * @param {Objet} element 组件数据标识
+     */
     handleClick (componentType, element) {
       switch (componentType) {
         case 'Basic':
-          this.vx_ac_AddElement(element.componentName);
+          this.vx_ac_AddBasicElement(element.componentName);
           break;
         case 'Complex':
           this.vx_ac_AddComplexElement(element.config);
