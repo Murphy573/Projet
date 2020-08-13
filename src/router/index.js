@@ -11,6 +11,6 @@ Router.prototype.push = function push (location) {
 Vue.use(Router);
 
 export default new Router({
-  mode: 'history',
+  mode: process.env.VUE_APP_Router_Mode,
   routes
 });

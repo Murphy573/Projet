@@ -8,7 +8,7 @@ const webpackConfigDev = require('./build/webpack.dev.conf');
 const webpackConfigProd = require('./build/webpack.prod.conf');
 
 module.exports = {
-  publicPath: '/',
+  publicPath: !IS_PRODUCTION ? '/' : '/Projet/',
   outputDir: ENV.outputDir,
   // 放置生成的静态资源 (js、css、img、fonts) 的 (相对于 outputDir 的) 目录。
   assetsDir: 'static/z',
