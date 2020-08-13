@@ -5,7 +5,7 @@
 Projet 是一个`在线生成 H5 页面并提供页面管理和页面编辑的平台`，用于快速制作 H5 页面。
 
 _图为编辑器工作区界面_
-![工作台](https://beta-img1.ops.yonyouauto.com/group1/M00/00/8E/CrUEs180qtmAOThqAAEzs9phUzE67.jpeg)
+![工作台](http://pic3.pocoimg.cn/image/poco/works/76/2020/0812/17/15972257783390255_201481929.jpg?imageMogr2/auto-orient/thumbnail/x800/blur/1x0/quality/100&)
 
 ### 支持功能
 
