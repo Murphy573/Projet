@@ -241,7 +241,7 @@ export default {
     },
     /* 粘贴元素 */
     vx_ac_PasteElement ({ getters, dispatch, commit }) {
-      // 调用组合组件添加方法
+      // 调用复合组件添加方法
       dispatch('vx_ac_AddComplexElement', getters.vx_gt_copiedElementData);
       // 重置
       commit('SET_COPIEDELEMENT', '');

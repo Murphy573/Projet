@@ -24,8 +24,8 @@ export function InitBasicElement (componentName) {
 }
 
 /**
- * 根据组合组件JSON串生成新的组件元素
- * @param {String} componentJson 组合组件的JSON串
+ * 根据复合组件JSON串生成新的组件元素
+ * @param {String} componentJson 复合组件的JSON串
  * @param {String} puid 要添加到的父元素uid
  */
 export function InitComplexElement (componentJson, puid) {
