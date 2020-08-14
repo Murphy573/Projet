@@ -33,7 +33,7 @@ import createComponent from '../../../model/create-component';
 export default createComponent({
   name: 'ProjetSample',
   // 左侧面板展示名称
-  dispayLabel: '编辑示例',
+  displayLabel: '编辑示例',
   // 左侧面板展示icon
   displayIcon: 'iconchangyongshili',
 

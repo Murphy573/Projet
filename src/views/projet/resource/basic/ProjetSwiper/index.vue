@@ -35,7 +35,7 @@ import { projetMapActions, projetMapGetters } from '../../../store/namespaced';
 export default createComponent({
   name: 'ProjetSwiper',
   // 左侧面板展示名称
-  dispayLabel: '轮播容器',
+  displayLabel: '轮播容器',
   // 左侧面板展示icon
   displayIcon: 'iconlunbo',
 

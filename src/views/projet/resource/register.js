@@ -12,17 +12,17 @@ BaiscComponents.forEach(temp => {
   const instance = temp.default;
   let {
     name,
-    dispayLabel,
+    displayLabel,
     displayIcon
   } = instance;
   Vue.component(name, instance);
 
   // 左侧选择面板展示
-  if (dispayLabel && displayIcon) {
+  if (displayLabel && displayIcon) {
     BasicList.push({
       componentName: name,
 
-      label: dispayLabel,
+      label: displayLabel,
       icon: displayIcon
     });
   }

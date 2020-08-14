@@ -18,7 +18,7 @@ import createComponent from '../../../model/create-component';
 export default createComponent({
   name: 'ProjetImage',
   // 左侧面板展示名称
-  dispayLabel: '图片',
+  displayLabel: '图片',
   // 左侧面板展示icon
   displayIcon: 'icontupian',
 

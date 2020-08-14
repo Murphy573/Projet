@@ -27,7 +27,7 @@ import { projetMapActions, projetMapGetters } from '../../../store/namespaced';
 export default createComponent({
   name: 'ProjetFlexContainer',
   // 左侧面板展示名称
-  dispayLabel: '弹性容器',
+  displayLabel: '弹性容器',
   // 左侧面板展示icon
   displayIcon: 'iconrongqi1',
 

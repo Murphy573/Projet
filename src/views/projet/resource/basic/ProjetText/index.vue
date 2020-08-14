@@ -12,7 +12,7 @@ import createComponent from '../../../model/create-component';
 export default createComponent({
   name: 'ProjetText',
   // 左侧面板展示名称
-  dispayLabel: '文本',
+  displayLabel: '文本',
   // 左侧面板展示icon
   displayIcon: 'iconwenben',
 
