@@ -48,6 +48,8 @@ export function InitComplexElement (componentJson, puid) {
       return data.map(ele => {
         ele.uid = generateUniqueIdByCustom(12);
         ele.puid = puid;
+        // 样式补全：因为保存的时候会去掉无用样式属性
+        ele.css = Object.assign({}, copyCommonCss(), ele.css);
         let elements = ele.props.elements;
 
         if (isArray(elements) && elements.length) {

@@ -47,6 +47,8 @@
 
 <script>
 import { projetMapActions, projetMapGetters } from '../../store/namespaced';
+import { handleSubmitElementData } from '../../utils/element';
+import { deepClone } from '@/utils/object';
 
 export default {
   name: 'ProjetLayoutHeader',
@@ -70,8 +72,10 @@ export default {
     },
     save () {
       /* eslint-disable */
+      let submitData = deepClone(this.vx_gt_pageData);
+      submitData = handleSubmitElementData(submitData);
       console.log('%c%s', 'color: red; font-size: 12px;', '==========配置信息start==========');
-      console.log('%c%s', 'color: blue; font-size: 12px;', JSON.stringify(this.vx_gt_pageData));
+      console.log('%c%s', 'color: blue; font-size: 12px;', JSON.stringify(submitData));
       console.log('%c%s', 'color: red; font-size: 12px;', '==========配置信息end==========');
       this.$message.success(`页面配置信息已打印到控制台，请使用快捷键 'ctrl+shift+I' 或 'cmd+option+I' 打开控制台查看`);
     }

@@ -1,5 +1,6 @@
 import { isPlainObj, isArray } from '@/utils/common';
 import { RegisterComponentObject } from '../resource/register';
+import { filterUnusedCss } from '../model/css';
 
 /**
  * 找出唯一id指定的元素
@@ -150,3 +151,41 @@ export const findActiveElementInParentIndex = (parentElement, activeUid) => {
     return el.uid === activeUid;
   });
 };
+
+/**
+ * 提交前处理数据：主要是处理无用样式
+ * @param {String} elementsData 页面元素数据
+ */
+export function handleSubmitElementData (elementsData) {
+  let _elementsData = [];
+  if (isPlainObj(elementsData)) {
+    _elementsData = [elementsData];
+  }
+  else if (isArray(elementsData)) {
+    _elementsData = elementsData;
+  }
+
+  if (!_elementsData.length) {
+    throw new Error('请传入正确的元素数据');
+  }
+
+  /**
+     * 递归创建组件数据
+     * @param {Array} data 组件数据
+     * @param {String} puid 父uid
+     */
+  let _map = (data) => {
+    return data.map(ele => {
+      ele.css = filterUnusedCss(ele.css);
+      let elements = ele.props.elements;
+
+      if (isArray(elements) && elements.length) {
+        ele.props.elements = _map(elements);
+      }
+
+      return ele;
+    });
+  };
+
+  return _map(_elementsData);
+}
