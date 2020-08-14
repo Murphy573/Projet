@@ -200,7 +200,7 @@ export default {
 
       dispatch('vx_ac_AddHistory');
     },
-    /* 添加组合组件 */
+    /* 添加复合组件 */
     vx_ac_AddComplexElement ({ commit, getters, dispatch }, componentJson = '') {
       if (!componentJson) return;
       let { vx_gt_activeElementData, vx_gt_activeElementUid } = getters;
@@ -210,16 +210,19 @@ export default {
       }
       let _elementDatas = InitComplexElement(componentJson, vx_gt_activeElementUid);
 
-      if (isArray(_elementDatas) && _elementDatas.length) {
-        _elementDatas.forEach(el => {
-          commit('ADD_ELEMENT', el);
-        });
+      if (!isArray(_elementDatas) || !_elementDatas.length) {
+        showMessage('复合组件JSON配置为空！');
+        return;
+      };
+      // 遍历添加元素
+      _elementDatas.forEach(el => {
+        commit('ADD_ELEMENT', el);
+      });
 
-        let { puid, uid } = _elementDatas[_elementDatas.length - 1];
-        commit('SET_ACTIVEELEMENTPUID', puid);
-        commit('SET_ACTIVEELEMENTUID', uid);
-        dispatch('vx_ac_AddHistory');
-      }
+      let { puid, uid } = _elementDatas[_elementDatas.length - 1];
+      commit('SET_ACTIVEELEMENTPUID', puid);
+      commit('SET_ACTIVEELEMENTUID', uid);
+      dispatch('vx_ac_AddHistory');
     },
     /* 复制元素 */
     async vx_ac_CopyElement ({ commit, getters }) {
@@ -230,7 +233,7 @@ export default {
           return false;
         }
         commit('SET_COPIEDELEMENT', JSON.stringify(vx_gt_activeElementData));
-        return vx_gt_activeElementData.props.title;
+        return vx_gt_activeElementData.props.title || '未命名元素';
       }
       catch (error) {
         return false;
