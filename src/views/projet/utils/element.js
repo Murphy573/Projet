@@ -170,9 +170,8 @@ export function handleSubmitElementData (elementsData) {
   }
 
   /**
-     * 递归创建组件数据
+     * 递归移除组件无用样式
      * @param {Array} data 组件数据
-     * @param {String} puid 父uid
      */
   let _map = (data) => {
     return data.map(ele => {
