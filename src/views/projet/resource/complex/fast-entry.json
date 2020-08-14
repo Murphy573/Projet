@@ -1,7 +1,7 @@
 {
-  "label": "快速入口",
-  "icon": "iconicon_rukou",
-  "config": [
+  "displayLabel": "快速入口",
+  "displayIcon": "iconicon_rukou",
+  "configs": [
     {
       "props": {
         "title": "快速入口",

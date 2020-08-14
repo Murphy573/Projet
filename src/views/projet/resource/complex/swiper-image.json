@@ -1,7 +1,7 @@
 {
-  "label": "轮播图",
-  "icon": "iconlunbotu",
-  "config": {
+  "displayLabel": "轮播图",
+  "displayIcon": "iconlunbotu",
+  "configs": {
     "props": {
       "title": "轮播容器",
       "autoplay": false,

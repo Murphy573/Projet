@@ -58,7 +58,7 @@ export default {
           this.vx_ac_AddBasicElement(element.componentName);
           break;
         case 'Complex':
-          this.vx_ac_AddComplexElement(element.config);
+          this.vx_ac_AddComplexElement(element.configs);
           break;
         default:
           this.$message.error(`不支持的组件类型：${componentType}`);

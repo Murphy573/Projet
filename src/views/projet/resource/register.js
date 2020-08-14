@@ -33,11 +33,11 @@ BaiscComponents.forEach(temp => {
 /* 复合组件 */
 let ComplexList = [];
 ComplexComponents.forEach(temp => {
-  let { label, icon, config } = temp;
+  let { displayLabel, displayIcon, configs } = temp;
   ComplexList.push({
-    config: JSON.stringify(config),
-    label: label,
-    icon: icon
+    configs: JSON.stringify(configs),
+    label: displayLabel,
+    icon: displayIcon
   });
 });
 
