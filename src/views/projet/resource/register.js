@@ -13,17 +13,17 @@ BaiscComponents.forEach(temp => {
   let {
     name,
     dispayLabel,
-    displayIconfont
+    displayIcon
   } = instance;
   Vue.component(name, instance);
 
   // 左侧选择面板展示
-  if (dispayLabel && displayIconfont) {
+  if (dispayLabel && displayIcon) {
     BasicList.push({
       componentName: name,
 
       label: dispayLabel,
-      icon: displayIconfont
+      icon: displayIcon
     });
   }
   // 添加到注册map

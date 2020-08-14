@@ -29,7 +29,7 @@ export default createComponent({
   // 左侧面板展示名称
   dispayLabel: '弹性容器',
   // 左侧面板展示icon
-  displayIconfont: 'iconrongqi1',
+  displayIcon: 'iconrongqi1',
 
   props: {
     title: {

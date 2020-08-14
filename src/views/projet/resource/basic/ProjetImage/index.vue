@@ -20,7 +20,7 @@ export default createComponent({
   // 左侧面板展示名称
   dispayLabel: '图片',
   // 左侧面板展示icon
-  displayIconfont: 'icontupian',
+  displayIcon: 'icontupian',
 
   props: {
     title: {

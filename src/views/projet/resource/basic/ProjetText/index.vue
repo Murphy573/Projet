@@ -14,7 +14,7 @@ export default createComponent({
   // 左侧面板展示名称
   dispayLabel: '文本',
   // 左侧面板展示icon
-  displayIconfont: 'iconwenben',
+  displayIcon: 'iconwenben',
 
   props: {
     title: {

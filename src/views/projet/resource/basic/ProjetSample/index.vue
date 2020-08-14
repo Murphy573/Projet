@@ -35,7 +35,7 @@ export default createComponent({
   // 左侧面板展示名称
   dispayLabel: '编辑示例',
   // 左侧面板展示icon
-  displayIconfont: 'iconchangyongshili',
+  displayIcon: 'iconchangyongshili',
 
   props: {
     title: {

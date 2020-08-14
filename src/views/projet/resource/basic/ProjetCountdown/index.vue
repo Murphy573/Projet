@@ -32,7 +32,7 @@ export default createComponent({
   // 左侧面板展示名称
   dispayLabel: '倒计时',
   // 左侧面板展示icon
-  displayIconfont: 'icondaojishi',
+  displayIcon: 'icondaojishi',
 
   props: {
     title: {
