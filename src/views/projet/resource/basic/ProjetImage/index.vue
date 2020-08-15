@@ -1,10 +1,9 @@
 <template>
   <div class="projet-img"
-    :style="css">
+    :style="cmpt_style">
     <img :src="src"
       :style="cmpt_imgStyle" />
   </div>
-
 </template>
 
 <script>

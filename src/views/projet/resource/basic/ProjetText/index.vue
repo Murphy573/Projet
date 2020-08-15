@@ -33,10 +33,9 @@ export default createComponent({
         {},
         this.css,
         {
-          display: 'inline-block',
-          backgroundImage: `url(${this.img})`,
-          color: this.color
-        });
+          display: 'inline-block'
+        }
+      );
     }
   },
 

@@ -2,10 +2,9 @@
   <div class="project-flex-container"
     :style="cmpt_style">
     <ProjetEditShape v-for="item in elements"
-      :key="item.uuid"
-      :active="item.uid === vx_gt_activeElementUid"
-      :style="formatCommonCss(item.css)"
-      @element-click="handleElementClick(item.uid)">
+      :key="item.uid"
+      :uid="item.uid"
+      :style="formatCommonCss(item.css)">
       <!-- 动态子元素 -->
       <component :is="item.componentName"
         :uid="item.uid"
@@ -22,7 +21,6 @@ import {
 } from '../../../model/attr.editor';
 import createComponent from '../../../model/create-component';
 import { formatCommonCss } from '../../../model/css.js';
-import { projetMapActions, projetMapGetters } from '../../../store/namespaced';
 
 export default createComponent({
   name: 'ProjetFlexContainer',
@@ -133,7 +131,6 @@ export default createComponent({
   },
 
   computed: {
-    ...projetMapGetters(['vx_gt_activeElementUid']),
     cmpt_style () {
       return Object.assign(
         {},
@@ -145,13 +142,6 @@ export default createComponent({
           justifyContent: this.justify,
           alignItems: this.align
         });
-    }
-  },
-
-  methods: {
-    ...projetMapActions(['vx_ac_SetActiveElementUid']),
-    handleElementClick (uid) {
-      this.vx_ac_SetActiveElementUid(uid);
     }
   },
 

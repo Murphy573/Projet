@@ -8,9 +8,8 @@
       :indicator-color="indicatorColor">
       <van-swipe-item v-for="item in elements"
         :key="item.uid">
-        <ProjetEditShape :active="item.uid === vx_gt_activeElementUid"
-          :style="formatCommonCss(item.css)"
-          @element-click="handleElementClick(item.uid)">
+        <ProjetEditShape :uid="item.uid"
+          :style="formatCommonCss(item.css)">
           <component :is="item.componentName"
             :uid="item.uid"
             v-bind="item.props" />
@@ -30,7 +29,7 @@ import {
   PROJET_ATTR_COLORPICKER
 } from '../../../model/attr.editor';
 import createComponent from '../../../model/create-component';
-import { projetMapActions, projetMapGetters } from '../../../store/namespaced';
+import { projetMapGetters } from '../../../store/namespaced';
 
 export default createComponent({
   name: 'ProjetSwiper',
@@ -128,13 +127,6 @@ export default createComponent({
         });
       },
       deep: true
-    }
-  },
-
-  methods: {
-    ...projetMapActions(['vx_ac_SetActiveElementUid']),
-    handleElementClick (uid) {
-      this.vx_ac_SetActiveElementUid(uid);
     }
   },
 

@@ -1,7 +1,7 @@
 <template>
   <div class="projet-edit-shape"
-    :class="{active: active}"
-    @click.stop="handleTopWrapperClick">
+    :class="{active: cmpt_active}"
+    @click.stop="setActive">
     <div class="border-line"
       :style="cmpt_style"></div>
     <slot></slot>
@@ -10,24 +10,31 @@
 
 <script>
 import ZIndex from '../../../utils/z-index';
+import { projetMapActions, projetMapGetters } from '../../../store/namespaced';
 
 export default {
   name: 'ProjetEditShape',
 
   props: {
-    active: Boolean
+    uid: String
   },
 
-  methods: {
-    handleTopWrapperClick () {
-      this.$emit('element-click');
-    }
-  },
   computed: {
+    ...projetMapGetters(['vx_gt_activeElementUid']),
     cmpt_style () {
       return {
         zIndex: ZIndex.zIndex
       };
+    },
+    cmpt_active () {
+      return this.vx_gt_activeElementUid === this.uid;
+    }
+  },
+
+  methods: {
+    ...projetMapActions(['vx_ac_SetActiveElementUid']),
+    setActive () {
+      this.vx_ac_SetActiveElementUid(this.uid);
     }
   }
 };

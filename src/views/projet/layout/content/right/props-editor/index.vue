@@ -8,11 +8,11 @@
           <el-tag type="danger">{{vx_gt_activeElementData.uid}}</el-tag>
         </el-form-item>
         <el-form-item v-for="item of cmpt_editorList"
-          :key="item.key"
+          :key="item.propKey"
           :label="item.label">
-          <component :is="item.renderType"
-            :options="item.options"
-            v-model="cmpt_activeElementProps[item.propKey]"></component>
+          <component v-model="cmpt_activeElementProps[item.propKey]"
+            :is="item.renderType"
+            :options="item.options"></component>
         </el-form-item>
       </el-form>
     </MyElScrollbar>

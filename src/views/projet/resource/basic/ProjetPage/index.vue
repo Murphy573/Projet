@@ -2,10 +2,9 @@
   <div class="project-page"
     :style="formatCommonCss(vx_gt_pageData.css)">
     <ProjetEditShape v-for="item in vx_gt_pageData.props.elements"
-      :key="item.uuid"
-      :active="item.uid === vx_gt_activeElementUid"
-      :style="formatCommonCss(item.css)"
-      @element-click="handleElementClick(item.uid)">
+      :key="item.uid"
+      :uid="item.uid"
+      :style="formatCommonCss(item.css)">
       <component :is="item.componentName"
         :uid="item.uid"
         v-bind="item.props" />
@@ -18,7 +17,7 @@
 import { formatCommonCss } from '../../../model/css.js';
 import { PROJET_ATTR_STRING } from '../../../model/attr.editor';
 import createComponent from '../../../model/create-component';
-import { projetMapActions, projetMapGetters } from '../../../store/namespaced';
+import { projetMapGetters } from '../../../store/namespaced';
 
 export default createComponent({
   name: 'ProjetPage',
@@ -41,14 +40,7 @@ export default createComponent({
   },
 
   computed: {
-    ...projetMapGetters(['vx_gt_pageData', 'vx_gt_activeElementUid', 'vx_gt_activeElementPuid'])
-  },
-
-  methods: {
-    ...projetMapActions(['vx_ac_SetActiveElementUid']),
-    handleElementClick (uid) {
-      this.vx_ac_SetActiveElementUid(uid);
-    }
+    ...projetMapGetters(['vx_gt_pageData'])
   },
 
   defaultCss: {
