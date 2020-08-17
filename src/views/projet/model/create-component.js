@@ -9,7 +9,7 @@ export default function (config, hasElements = false) {
   if (!config.props) {
     config.props = {};
   }
-  // 样式
+  // uid
   config.props.uid = {
     type: String,
     default: ''
@@ -33,7 +33,7 @@ export default function (config, hasElements = false) {
       }
     };
   }
-
+  // 是否支持嵌套
   if (hasElements) {
     config.props.elements = {
       type: Array,
