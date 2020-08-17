@@ -4,10 +4,10 @@
 set -e
 
 # 构建
-npm run build
+npm run build:deploy
 
 # cd 到构建输出的目录下 
-cd projet-prod-dist
+cd projet-deploy-dist
 
 # 部署到自定义域域名
 # echo 'www.example.com' > CNAME

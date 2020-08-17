@@ -5,7 +5,7 @@ const ENV = process.env;
 // tree-shaking
 const HappyPack = require('happypack');
 // gzip压缩插件
-// const CompressionWebpackPlugin = require('compression-webpack-plugin');
+const CompressionWebpackPlugin = require('compression-webpack-plugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const happyThreadPool = HappyPack.ThreadPool({ size: OS.cpus().length });
 const resolve = dir => path.join(__dirname, dir);
@@ -29,14 +29,14 @@ let _plugins = [
 
 // 如果执行build命令，添加gzip压缩
 if (ENV.VUE_APP_ENV === 'production') {
-  // const _cwp = new CompressionWebpackPlugin({
-  //   algorithm: 'gzip',
-  //   deleteOriginalAssets: true,
-  //   threshold: 0,
-  //   minRatio: 1,
-  //   test: new RegExp('\\.(' + ['js', 'css'].join('|') + ')$')
-  // });
-  // _plugins.push(_cwp);
+  const _cwp = new CompressionWebpackPlugin({
+    algorithm: 'gzip',
+    deleteOriginalAssets: true,
+    threshold: 0,
+    minRatio: 1,
+    test: new RegExp('\\.(' + ['js', 'css'].join('|') + ')$')
+  });
+  _plugins.push(_cwp);
 }
 
 module.exports = {
@@ -58,6 +58,13 @@ module.exports = {
       // maxInitialRequests: 30,
       // name: false,
       cacheGroups: {
+        projet: {
+          name: 'chunk-projet',
+          test: resolve('../src/views/projet'),
+          minChunks: 1,
+          priority: 35,
+          reuseExistingChunk: true
+        },
         vue: {
           test: /[\\/]node_modules[\\/](vue|vue-router|vuex|vue-i18n)[\\/]/,
           name: 'vue-vendor',

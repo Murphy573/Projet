@@ -4,11 +4,13 @@ const resolve = dir => path.join(__dirname, dir);
 // 环境变量
 const ENV = process.env;
 const IS_PRODUCTION = ENV.NODE_ENV === 'production';
+// 是否是发布到github
+const IS_DEPLOY = ENV.VUE_APP_ENV === 'deploy';
 const webpackConfigDev = require('./build/webpack.dev.conf');
 const webpackConfigProd = require('./build/webpack.prod.conf');
 
 module.exports = {
-  publicPath: !IS_PRODUCTION ? '/' : '/Projet/',
+  publicPath: !IS_DEPLOY ? '/' : '/Projet/',
   outputDir: ENV.outputDir,
   // 放置生成的静态资源 (js、css、img、fonts) 的 (相对于 outputDir 的) 目录。
   assetsDir: 'static/z',

@@ -12,6 +12,7 @@
     "start": "vue-cli-service serve",
     "lint": "vue-cli-service lint --max-warnings 0",
     "build": "npm run lint && vue-cli-service build --mode production",
+    "build:deploy": "npm run lint && vue-cli-service build --mode deploy",
     "svgo": "svgo -f src/icons/svg --config=src/icons/svgo.yml",
     "deploy:github": "sh build/deploy.sh"
   },
