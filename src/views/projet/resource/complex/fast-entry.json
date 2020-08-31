@@ -9,8 +9,6 @@
         "wrap": "nowrap",
         "justify": "flex-start",
         "align": "flex-start",
-        "uid": "",
-        "css": {},
         "jumpLink": "",
         "elements": [
           {
@@ -20,8 +18,6 @@
               "wrap": "nowrap",
               "justify": "center",
               "align": "center",
-              "uid": "",
-              "css": {},
               "jumpLink": "/home",
               "elements": [
                 {
@@ -29,8 +25,6 @@
                     "title": "这是一张图片",
                     "src": "https://dummyimage.com/800x300.jpg",
                     "fit": "fill",
-                    "uid": "",
-                    "css": {},
                     "jumpLink": ""
                   },
                   "componentName": "ProjetImage",
@@ -49,8 +43,6 @@
                 {
                   "props": {
                     "title": "入口1",
-                    "uid": "",
-                    "css": {},
                     "jumpLink": ""
                   },
                   "componentName": "ProjetText",
@@ -90,8 +82,6 @@
               "wrap": "nowrap",
               "justify": "center",
               "align": "center",
-              "uid": "",
-              "css": {},
               "jumpLink": "https://baidu.com",
               "elements": [
                 {
@@ -99,8 +89,6 @@
                     "title": "这是一张图片",
                     "src": "https://dummyimage.com/800x300.jpg",
                     "fit": "fill",
-                    "uid": "",
-                    "css": {},
                     "jumpLink": ""
                   },
                   "componentName": "ProjetImage",
@@ -119,8 +107,6 @@
                 {
                   "props": {
                     "title": "入口2",
-                    "uid": "",
-                    "css": {},
                     "jumpLink": ""
                   },
                   "componentName": "ProjetText",
@@ -160,8 +146,6 @@
               "wrap": "nowrap",
               "justify": "center",
               "align": "center",
-              "uid": "",
-              "css": {},
               "jumpLink": "/home",
               "elements": [
                 {
@@ -169,8 +153,6 @@
                     "title": "这是一张图片",
                     "src": "https://dummyimage.com/800x300.jpg",
                     "fit": "fill",
-                    "uid": "",
-                    "css": {},
                     "jumpLink": ""
                   },
                   "componentName": "ProjetImage",
@@ -189,8 +171,6 @@
                 {
                   "props": {
                     "title": "入口3",
-                    "uid": "",
-                    "css": {},
                     "jumpLink": ""
                   },
                   "componentName": "ProjetText",
@@ -230,8 +210,6 @@
               "wrap": "nowrap",
               "justify": "center",
               "align": "center",
-              "uid": "",
-              "css": {},
               "jumpLink": "/home",
               "elements": [
                 {
@@ -239,8 +217,6 @@
                     "title": "这是一张图片",
                     "src": "https://dummyimage.com/800x300.jpg",
                     "fit": "fill",
-                    "uid": "",
-                    "css": {},
                     "jumpLink": "/home"
                   },
                   "componentName": "ProjetImage",
@@ -259,8 +235,6 @@
                 {
                   "props": {
                     "title": "入口4",
-                    "uid": "",
-                    "css": {},
                     "jumpLink": ""
                   },
                   "componentName": "ProjetText",
@@ -300,8 +274,6 @@
               "wrap": "nowrap",
               "justify": "center",
               "align": "center",
-              "uid": "",
-              "css": {},
               "jumpLink": "/scroll",
               "elements": [
                 {
@@ -309,8 +281,6 @@
                     "title": "这是一张图片",
                     "src": "https://dummyimage.com/800x300.jpg",
                     "fit": "fill",
-                    "uid": "",
-                    "css": {},
                     "jumpLink": "/home"
                   },
                   "componentName": "ProjetImage",
@@ -329,8 +299,6 @@
                 {
                   "props": {
                     "title": "入口5",
-                    "uid": "",
-                    "css": {},
                     "jumpLink": ""
                   },
                   "componentName": "ProjetText",

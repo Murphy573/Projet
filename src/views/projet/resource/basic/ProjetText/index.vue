@@ -31,7 +31,6 @@ export default createComponent({
     cmpt_style () {
       return Object.assign(
         {},
-        this.css,
         {
           display: 'inline-block'
         }

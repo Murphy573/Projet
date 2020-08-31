@@ -9,18 +9,7 @@ export default function (config, hasElements = false) {
   if (!config.props) {
     config.props = {};
   }
-  // uid
-  config.props.uid = {
-    type: String,
-    default: ''
-  };
-  // 样式
-  config.props.css = {
-    type: Object,
-    default () {
-      return {};
-    }
-  };
+
   // 跳转链接
   if (config.name !== 'ProjetPage') {
     config.props.jumpLink = {

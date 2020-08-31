@@ -134,7 +134,6 @@ export default createComponent({
     cmpt_style () {
       return Object.assign(
         {},
-        this.css,
         {
           display: 'flex',
           flexDirection: this.direction,

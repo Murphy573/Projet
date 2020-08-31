@@ -8,8 +8,6 @@
       "interval": 2,
       "showIndicators": true,
       "indicatorColor": "rgba(239,236,18,1)",
-      "uid": "",
-      "css": {},
       "jumpLink": "",
       "elements": [
         {
@@ -17,8 +15,6 @@
             "title": "这是一张图片",
             "src": "https://dummyimage.com/800x300.jpg",
             "fit": "fill",
-            "uid": "",
-            "css": {},
             "jumpLink": "/home"
           },
           "componentName": "ProjetImage",
@@ -38,8 +34,6 @@
             "title": "这是一张图片",
             "src": "https://dummyimage.com/800x300.jpg",
             "fit": "fill",
-            "uid": "",
-            "css": {},
             "jumpLink": "https://baidu.com"
           },
           "componentName": "ProjetImage",
@@ -59,8 +53,6 @@
             "title": "这是一张图片",
             "src": "https://dummyimage.com/800x300.jpg",
             "fit": "fill",
-            "uid": "",
-            "css": {},
             "jumpLink": "/scroll"
           },
           "componentName": "ProjetImage",

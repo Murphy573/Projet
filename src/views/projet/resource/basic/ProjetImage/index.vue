@@ -62,7 +62,6 @@ export default createComponent({
     cmpt_style () {
       return Object.assign(
         {},
-        this.css,
         {
           // 解决弹性垂直方向：图片不能等分
           overflow: 'hidden'

@@ -1,6 +1,5 @@
 <template>
-  <span class="projet-countdown"
-    :style="css">
+  <span class="projet-countdown">
     <van-count-down :time="cmpt_time">
       <template v-slot="{days, hours, minutes, seconds}">
         <span class="block"

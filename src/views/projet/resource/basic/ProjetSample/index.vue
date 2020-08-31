@@ -192,7 +192,6 @@ export default createComponent({
     cmpt_style () {
       return Object.assign(
         {},
-        this.css,
         {
           backgroundImage: `url(${this.img})`,
           color: this.color,
