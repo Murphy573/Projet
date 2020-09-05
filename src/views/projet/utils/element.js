@@ -16,29 +16,23 @@ export const findActiveElement = (elementsData, uid) => {
   else if (isArray(elementsData)) {
     _elementsData = elementsData;
   }
-  let finded = null;
 
-  let findFunc = (data) => {
-    return data.some(d => {
-      if (finded) {
-        return true;
-      }
-      if (d.uid === uid) {
-        finded = d;
-        return true;
-      }
-      else {
-        if (isArray(d.props.elements)) {
-          findFunc(d.props.elements);
-        }
-        return false;
-      }
-    });
-  };
+  /* bfs：广度优先遍历--队列 */
+  let queue = [].concat(_elementsData);
+  let node = null;
+  while (queue.length) {
+    node = queue.shift();
+    if (node.uid === uid) {
+      return node;
+    }
 
-  findFunc(_elementsData);
+    if (isArray(node.props.elements)) {
+      queue.push(...node.props.elements);
+    }
+    node = null;
+  }
 
-  return finded;
+  return node;
 };
 
 /**
@@ -169,22 +163,18 @@ export function handleSubmitElementData (elementsData) {
     throw new Error('请传入正确的元素数据');
   }
 
-  /**
-     * 递归移除组件无用样式
-     * @param {Array} data 组件数据
-     */
-  let _map = (data) => {
-    return data.map(ele => {
-      ele.css = filterUnusedCss(ele.css);
-      let elements = ele.props.elements;
+  /* dfs：深度优先遍历--栈 */
+  let stack = [].concat(_elementsData);
+  let node = null;
+  while (stack.length) {
+    node = stack.pop();
+    node.css = filterUnusedCss(node.css);
+    let elements = node.props.elements;
 
-      if (isArray(elements) && elements.length) {
-        ele.props.elements = _map(elements);
-      }
+    if (isArray(elements) && elements.length) {
+      stack.push(...elements);
+    }
+  }
 
-      return ele;
-    });
-  };
-
-  return _map(_elementsData);
+  return _elementsData;
 }

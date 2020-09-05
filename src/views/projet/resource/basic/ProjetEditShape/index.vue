@@ -60,11 +60,13 @@ export default {
   &.active {
     > .border-line {
       border: 2px dashed $--color-primary;
+      z-index: 99999 !important;
     }
   }
   &:hover {
     > .border-line {
       border: 2px dashed $--color-primary;
+      z-index: 99999 !important;
     }
   }
 }
