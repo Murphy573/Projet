@@ -1,0 +1,6 @@
+chore*.sh
+node_modules
+*.md
+*.woff
+*.ttf
+src/assets
