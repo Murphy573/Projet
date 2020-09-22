@@ -110,8 +110,8 @@ export default {
           user-select: none;
 
           &:hover {
-            border-color: rgba($color: $--color-primary, $alpha: 1);
-            color: rgba($color: $--color-primary, $alpha: 1);
+            border-color: rgba($color: $--color-primary-projet, $alpha: 1);
+            color: rgba($color: $--color-primary-projet, $alpha: 1);
           }
 
           &:nth-child(even) {

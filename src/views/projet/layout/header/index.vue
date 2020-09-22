@@ -119,8 +119,8 @@ export default {
         user-select: none;
 
         &:hover {
-          color: #409eff;
-          background: rgba($color: $--color-primary, $alpha: 0.1);
+          color: $--color-primary-projet;
+          background: rgba($color: $--color-primary-projet, $alpha: 0.1);
         }
 
         &.disabled {
@@ -133,8 +133,8 @@ export default {
         }
 
         &.active {
-          color: #409eff;
-          background: rgba($color: $--color-primary, $alpha: 0.1);
+          color: $--color-primary-projet;
+          background: rgba($color: $--color-primary-projet, $alpha: 0.1);
         }
 
         p {

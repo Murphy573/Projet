@@ -108,8 +108,8 @@ export default {
     margin-bottom: 10px;
 
     &:not(.disabled):hover {
-      color: #409eff;
-      background: rgba($color: $--color-primary, $alpha: 0.1);
+      color: $--color-primary-projet;
+      background: rgba($color: $--color-primary-projet, $alpha: 0.1);
     }
 
     &.disabled {

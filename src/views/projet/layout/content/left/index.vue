@@ -89,7 +89,7 @@ export default {
       }
       .el-tabs__nav-scroll {
         .el-tabs__item.is-active {
-          background: rgba($color: #409eff, $alpha: 0.1);
+          background: rgba($color: $--color-primary-projet, $alpha: 0.1);
         }
       }
     }
