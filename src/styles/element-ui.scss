@@ -28,24 +28,6 @@
   }
 }
 
-.fixed-width {
-  .el-button--mini {
-    padding: 7px 10px;
-    width: 60px;
-  }
-}
-
-.status-col {
-  .cell {
-    padding: 0 10px;
-    text-align: center;
-
-    .el-tag {
-      margin-right: 0;
-    }
-  }
-}
-
 // to fixed https://github.com/ElemeFE/element/issues/2461
 .el-dialog {
   transform: none;
@@ -91,4 +73,14 @@
 /* 解决表头错位问题 */
 .el-table th.gutter {
   display: table-cell !important;
+}
+
+.el-form {
+  .el-form-item {
+    // margin-bottom: 30px !important;
+
+    &.el-form-item-bottom-0 {
+      margin-bottom: 0 !important;
+    }
+  }
 }
