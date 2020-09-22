@@ -63,12 +63,20 @@ export const BackgroundSizeOptions = [
 /* 文字粗细 */
 export const FontWeightOptions = [
   {
-    label: '默认值',
+    label: '正常',
     value: 'normal'
   },
   {
+    label: '较细',
+    value: '300'
+  },
+  {
     label: '加粗',
-    value: 'bold'
+    value: '500'
+  },
+  {
+    label: '最粗',
+    value: '700'
   }
 ];
 

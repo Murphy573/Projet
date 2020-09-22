@@ -7,7 +7,9 @@
       "autoplay": false,
       "interval": 2,
       "showIndicators": true,
-      "indicatorColor": "rgba(239,236,18,1)",
+      "indicatorColor": "#ebedf0",
+      "indicatorActiveColor": "#DD1A21",
+      "indicatorBottom": 12,
       "jumpLink": "",
       "elements": [
         {
