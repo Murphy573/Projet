@@ -1,5 +1,6 @@
 
 import { deepClone } from '@/utils/object';
+import { isPlainObj, isArray } from '@/utils/common';
 import { generateUniqueIdByCustom } from '@/utils/string';
 import { copyCommonCss } from './css';
 import { getComponentPropsAndCss } from '../utils/element';
@@ -25,4 +26,53 @@ export function InitNewPage () {
     puid: uid,
     root: true
   }, _pageData);
+}
+
+/**
+ * 从模版json中初始化页面
+ * @param {String} tplJson
+ */
+export function InitTemplatePage (tplJson) {
+  try {
+    let pageData = JSON.parse(tplJson);
+    let _pageData = [];
+    if (isPlainObj(pageData)) {
+      _pageData = [pageData];
+    }
+    else if (isArray(pageData)) {
+      _pageData = pageData;
+    }
+
+    /**
+     * 递归创建页面数据
+     * @param {Array} data 模版数据
+     * @param {String} puid 父uid
+     */
+    let _map = (data, puid) => {
+      return data.map(ele => {
+        ele.uid = generateUniqueIdByCustom(12);
+        // 是否是根结点
+        if (!ele.root) {
+          ele.puid = puid;
+        }
+        else {
+          ele.puid = ele.uid;
+        }
+        // 样式补全：因为保存的时候会去掉无用样式属性
+        ele.css = Object.assign({}, copyCommonCss(), ele.css);
+        let elements = ele.props.elements;
+
+        if (isArray(elements) && elements.length) {
+          ele.props.elements = _map(elements, ele.uid);
+        }
+
+        return ele;
+      });
+    };
+
+    return _map(_pageData)[0];
+  }
+  catch (error) {
+    return null;
+  }
 }

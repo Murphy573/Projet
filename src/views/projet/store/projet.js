@@ -1,5 +1,5 @@
 /* 编辑器核心 */
-import { InitNewPage } from '../model/page';
+import { InitNewPage, InitTemplatePage } from '../model/page';
 import { InitBasicElement, InitComplexElement } from '../model/element';
 import {
   findActiveElement,
@@ -174,8 +174,15 @@ export default {
       commit('SET_ACTIVEELEMENTPUID', getters.vx_gt_activeElementData.puid);
     },
     /* 添加页面 */
-    vx_ac_AddPage ({ commit, dispatch }) {
-      let _page = InitNewPage();
+    vx_ac_AddPage ({ commit, dispatch }, tplJson = '') {
+      let _page;
+      if (!tplJson) {
+        _page = InitNewPage();
+      }
+      else {
+        _page = InitTemplatePage(tplJson);
+      }
+
       commit('ADD_PAGE', _page);
       commit('SET_ACTIVEELEMENTPUID', _page.uid);
       commit('SET_ACTIVEELEMENTUID', _page.puid);
