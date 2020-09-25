@@ -41,7 +41,7 @@ export default {
   mounted () {
     // 监听模版列表获取事件
     Bus.$on('template: template-list-get', () => {
-      // this.getComplexElementList();
+      // this.getTemplateList();
     });
     this.$once('hook:beforeDestroy', () => {
       Bus.$off('template: template-list-get');
