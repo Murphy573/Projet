@@ -21,6 +21,10 @@ export const SizeOptions = [
   {
     label: '1/5',
     value: '20%'
+  },
+  {
+    label: '自适应内容',
+    value: 'fit-content'
   }
 ];
 

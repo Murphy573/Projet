@@ -39,8 +39,8 @@ export default createComponent({
   },
 
   defaultCss: {
-    width: 100,
-    height: 40,
+    width: 'fit-content',
+    height: 'fit-content',
     wordBreak: 'break-all'
   }
 });
