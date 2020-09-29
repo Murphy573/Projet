@@ -75,11 +75,24 @@ export function appendUrlParams (url, paramObj) {
  */
 export function deleteUrlParams (url, params) {
   if (!url || !Array.isArray(params)) return url;
+
+  let paramIndex = url.indexOf('?');
+  if (paramIndex === -1) {
+    return url;
+  }
+
+  let searchParams = url.substring(paramIndex + 1);
+  url = url.substring(0, paramIndex);
+
   params.forEach(item => {
     let pattern = '&*' + item + '=([^&]*)';
-    if (url.match(pattern)) {
-      url = url.replace(url.match(pattern)[0], '');
+    if (searchParams.match(pattern)) {
+      searchParams = searchParams.replace(searchParams.match(pattern)[0], '');
     }
   });
+  searchParams = searchParams.indexOf('&') === 0 ? searchParams.substring(1) : searchParams;
+  if (searchParams.length) {
+    url += '?' + searchParams;
+  }
   return url;
 }
